@@ -4,8 +4,9 @@ import java.util.List;
 
 public class Tabuleiro {
 	private List<Peca> pecas;
-	private Peca pecaSelecionada1 = null;
-	private Peca pecaSelecionada2 = null;
+	private Peca pecaSelecionada1;
+	private Peca pecaSelecionada2;
+	private boolean encerrado;
 
 	public boolean validaMovimento() {
 		
@@ -29,15 +30,15 @@ public class Tabuleiro {
 		return false;
 	}
 	
-	public void selecionarPeca(int valor) throws Exception {
+	public void selecionarPeca(int id) throws Exception {
 		if(pecaSelecionada1 == null) {
 			this.pecaSelecionada1 = this.pecas.stream()
-		    .filter(peca -> valor == peca.getValor())
+		    .filter(peca -> id == peca.getId())
 		    .findAny()
 		    .orElse(null);
 		} else {
 			Peca pecaASerSelecionada = this.pecas.stream()
-		    .filter(peca -> valor == peca.getValor())
+		    .filter(peca -> id == peca.getId())
 		    .findAny()
 		    .orElse(null);
 			if(pecaASerSelecionada.equals(this.pecaSelecionada1)) {
@@ -58,10 +59,24 @@ public class Tabuleiro {
 			pecaSelecionada1.setColuna(pecaSelecionada2.getColuna());
 			pecaSelecionada2.setLinha(auxLinha);
 			pecaSelecionada2.setColuna(colunaAux);
+			if(this.checkIfPuzzleIsSolved()) {
+				this.setEncerrado();
+			};
 		}
+	}
+	
+	public boolean checkIfPuzzleIsSolved() {
+		return 	pecas.stream()
+				.allMatch( peca -> {
+					return peca.getId() == peca.getPosicao();
+				});
 	}
 	
 	public void embaralhar() {
 		
+	}
+	
+	private void setEncerrado() {
+		this.encerrado = true;
 	}
 }

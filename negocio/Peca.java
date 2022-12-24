@@ -1,26 +1,26 @@
 package negocio;
 
 public class Peca {
-	private int valor;
+	private int id;
 	private String imagem;
 	private int linha, coluna;
 	private boolean estaVazio;
 	
-	public Peca(int valor, String imagem, int linha, int coluna, boolean estaVazio) {
+	public Peca(int id, String imagem, int linha, int coluna, boolean estaVazio) {
 		super();
-		this.valor = valor;
+		this.id = id;
 		this.imagem = imagem;
 		this.linha = linha;
 		this.coluna = coluna;
 		this.estaVazio = estaVazio;
 	}
 	
-	public int getValor() {
-		return valor;
+	public int getId() {
+		return id;
 	}
 
-	public void setValor(int valor) {
-		this.valor = valor;
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getImagem() {
@@ -51,7 +51,10 @@ public class Peca {
 		return this.estaVazio;
 	}
 	
-	
+	public int getPosicao() {
+		int posicao = getColuna() + (4 * (getLinha() - 1));
+		return posicao;
+	}
 	
 
 }
