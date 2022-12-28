@@ -6,31 +6,25 @@ public class Tabuleiro {
 	private List<Peca> pecas;
 	private Peca pecaSelecionada1;
 	private Peca pecaSelecionada2;
-	private boolean encerrado;
+	private boolean resolvido;
 
-	public boolean validaMovimento() {
+	Tabuleiro(List<Peca> pecas ){
+		this.pecas = pecas;
+		resolvido = false;
+	}
+	
+	public boolean verificarValidadeDoMovimento() {
 		
 		if(pecaSelecionada1.isVazio() || pecaSelecionada2.isVazio()) {
-			int linha1 = pecaSelecionada1.getLinha();
-			int linha2 = pecaSelecionada2.getLinha();
-			int coluna1 = pecaSelecionada1.getColuna();
-			int coluna2 = pecaSelecionada2.getColuna();
-			if(linha1 == linha2) {
-				int diferencaColuna = coluna1 - coluna2;
-				if(diferencaColuna * diferencaColuna == 1) {
-					return true;
-				}
-			} else if(coluna1 == coluna2) {
-				int diferencaLinha = linha1 - linha2;
-				if(diferencaLinha * diferencaLinha == 1) {
-					return true;
-				}
-			}
+			int posicao1 = pecaSelecionada1.getPosicao();
+			int posicao2 = pecaSelecionada2.getPosicao();
+			int diferencaPosicoes = posicao1 - posicao2;
+			return diferencaPosicoes == 1 || diferencaPosicoes == -1 || diferencaPosicoes == 4 || diferencaPosicoes == -4;
 		}
 		return false;
 	}
 	
-	public void selecionarPeca(int id) throws Exception {
+	public void selecionarPeca(int id) {
 		if(pecaSelecionada1 == null) {
 			this.pecaSelecionada1 = this.pecas.stream()
 		    .filter(peca -> id == peca.getId())
@@ -45,22 +39,18 @@ public class Tabuleiro {
 				this.pecaSelecionada1 = null;
 			} else if(this.pecaSelecionada1.isVazio() || pecaASerSelecionada.isVazio()){
 				this.pecaSelecionada2 = pecaASerSelecionada;
-				
 			}
 		}
 	}
 	
 	public void movimentarPecas() {
-		if( this.validaMovimento() ) {
-			int auxLinha, colunaAux;
-			auxLinha = pecaSelecionada1.getLinha();
-			colunaAux = pecaSelecionada1.getColuna();
-			pecaSelecionada1.setLinha(pecaSelecionada2.getLinha());
-			pecaSelecionada1.setColuna(pecaSelecionada2.getColuna());
-			pecaSelecionada2.setLinha(auxLinha);
-			pecaSelecionada2.setColuna(colunaAux);
+		if( this.verificarValidadeDoMovimento() ) {
+			int auxPosicao;
+			auxPosicao = pecaSelecionada1.getPosicao();
+			pecaSelecionada1.setPosicao(pecaSelecionada2.getPosicao());
+			pecaSelecionada2.setPosicao(auxPosicao);
 			if(this.checkIfPuzzleIsSolved()) {
-				this.setEncerrado();
+				this.setResolvido();
 			};
 		}
 	}
@@ -72,11 +62,11 @@ public class Tabuleiro {
 				});
 	}
 	
-	public void embaralhar() {
-		
+	private void setResolvido() {
+		this.resolvido = true;
 	}
 	
-	private void setEncerrado() {
-		this.encerrado = true;
+	public boolean getResolvido() {
+		return this.resolvido;
 	}
 }
