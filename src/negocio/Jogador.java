@@ -5,10 +5,16 @@ public class Jogador {
 	private int codigo;
 	private float pontos;
 	
-	Jogador(String apelido, int codigo) {
+	public Jogador(String apelido, int codigo) {
 		this.apelido = apelido;
 		this.codigo = codigo;
 		this.pontos = 0;
+	}
+	
+	public Jogador(String apelido, int codigo, float pontos) {
+		this.apelido = apelido;
+		this.codigo = codigo;
+		this.pontos = pontos;
 	}
 	
 	public String getApelido() {
