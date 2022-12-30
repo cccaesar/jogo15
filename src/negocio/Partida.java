@@ -3,11 +3,11 @@ package negocio;
 import java.util.ArrayList;
 
 public class Partida {
-	private ArrayList<Jogador> jogadores;
+	private Jogador jogador;
 	private Tabuleiro tabuleiro;
 	
-	Partida(ArrayList<Jogador> jogadores, boolean emparalhamentoImpar){
-		this.jogadores = jogadores;
+	Partida(Jogador jogador, boolean emparalhamentoImpar){
+		this.jogador = jogador;
 		if(emparalhamentoImpar) {
 			embaralharImpar();
 		} else {
@@ -24,8 +24,8 @@ public class Partida {
 		
 	}
 	
-	public ArrayList<Jogador> getJogador() {
-		return jogadores;
+	public Jogador getJogador() {
+		return jogador;
 	}
 	
 	public Tabuleiro getTabuleiro() {

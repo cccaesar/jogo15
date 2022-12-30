@@ -8,7 +8,7 @@ public class Jogador {
 	public Jogador(String apelido, int codigo) {
 		this.apelido = apelido;
 		this.codigo = codigo;
-		this.pontos = 0;
+		this.pontos = -1;
 	}
 	
 	public Jogador(String apelido, int codigo, float pontos) {
@@ -16,7 +16,7 @@ public class Jogador {
 		this.codigo = codigo;
 		this.pontos = pontos;
 	}
-	
+
 	public String getApelido() {
 		return apelido;
 	}

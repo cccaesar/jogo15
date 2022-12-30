@@ -9,6 +9,10 @@ public class ConexaoSQL {
 	private String url="jdbc:sqlite:ranking15.db";
 	private SQLiteDataSource ds;
 	
+	public ConexaoSQL() {
+		createDatabase();
+	}
+	
 	public void createDatabase() {
 		ds = new SQLiteDataSource();
 		ds.setUrl(url);
