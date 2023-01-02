@@ -68,7 +68,7 @@ public class JogadorDAO {
 	
 	public void limparHistorico() throws Exception {
 		Statement stmt = conn.getConexao().createStatement();
-		stmt.executeUpdate("drop table if exists JOGADOR");
+		stmt.executeUpdate("delete from jogador");
 	}
 	
 	public void updateJogadorPontos(float pontos, int codigo) throws Exception {
