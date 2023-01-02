@@ -1,10 +1,9 @@
 package negocio;
 
-import java.util.ArrayList;
-
 public class Partida {
 	private Jogador jogador;
 	private Tabuleiro tabuleiro;
+	private Cronometro cronometro;
 	
 	Partida(Jogador jogador, boolean emparalhamentoImpar){
 		this.jogador = jogador;
