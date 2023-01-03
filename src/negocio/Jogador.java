@@ -3,7 +3,7 @@ package negocio;
 public class Jogador {
 	private String apelido;
 	private int codigo;
-	private float pontos;
+	private double pontos;
 	
 	public Jogador(String apelido, int codigo) {
 		this.apelido = apelido;
@@ -11,7 +11,7 @@ public class Jogador {
 		this.pontos = -1;
 	}
 	
-	public Jogador(String apelido, int codigo, float pontos) {
+	public Jogador(String apelido, int codigo, double pontos) {
 		this.apelido = apelido;
 		this.codigo = codigo;
 		this.pontos = pontos;
@@ -23,8 +23,12 @@ public class Jogador {
 	public int getCodigo() {
 		return codigo;
 	}
-	public float getPontos() {
+	public double getPontos() {
 		return pontos;
+	}
+
+	protected void setPontos(double pontos) {
+		this.pontos = pontos;
 	}
 	
 }
