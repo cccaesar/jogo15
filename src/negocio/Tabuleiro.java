@@ -69,4 +69,12 @@ public class Tabuleiro {
 	public boolean getResolvido() {
 		return this.resolvido;
 	}
+	
+	public void embaralharPar() {
+		
+	}
+	
+	public void embaralharImpar() {
+		
+	}
 }

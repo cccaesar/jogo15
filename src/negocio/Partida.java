@@ -7,11 +7,13 @@ public class Partida {
 	
 	Partida(Jogador jogador, boolean emparalhamentoImpar){
 		this.jogador = jogador;
+		this.cronometro = new Cronometro();
 		if(emparalhamentoImpar) {
 			embaralharImpar();
 		} else {
 			embaralharPar();
 		}
+		cronometro.inciarContagem();
 	}
 	
 	
@@ -29,5 +31,9 @@ public class Partida {
 	
 	public Tabuleiro getTabuleiro() {
 		return tabuleiro;
+	}
+	
+	public Cronometro getCronometro() {
+		return this.cronometro;
 	}
 }
