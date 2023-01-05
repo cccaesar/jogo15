@@ -75,7 +75,6 @@ public class Partida {
 			return true;
 		}
 		return false;
-		
 	}
 	
 	public Jogador getJogador() {
