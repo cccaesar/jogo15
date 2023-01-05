@@ -44,7 +44,7 @@ public class Partida {
 				jogador.setPontos( jogador.getPontos() + (tempoDeSobra * 6));
 			}
 			
-				//Adicionando novamente 59 segundos, para que a verifica��o do tempo seja correta
+				//Adicionando novamente 59 segundos, para que a verificacao do tempo seja correta
 			
 		
 			if(cronometro.getTempoDecorrido() >= 600 && cronometro.getTempoDecorrido() < 5999) {
