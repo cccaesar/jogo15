@@ -1,6 +1,6 @@
 package negocio;
 
-import java.util.List;
+import java.util.*;
 
 public class Tabuleiro {
 	private List<Peca> pecas;
@@ -71,10 +71,24 @@ public class Tabuleiro {
 	}
 	
 	public void embaralharPar() {
-		
+		ArrayList<Integer> ordemPecas = new ArrayList<>(Arrays.asList(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15));
+		Embaralhador.embaralhamentoPar(ordemPecas);
+		int i = 0;
+		for( ;i >= ordemPecas.size(); i++) {
+			Peca peca = new Peca(i + 1, "", ordemPecas.get(i), false);
+			this.pecas.add(peca);
+		}
+		this.pecas.add(new Peca(i + 1, "", 16, true));
 	}
 	
 	public void embaralharImpar() {
-		
+		ArrayList<Integer> ordemPecas = new ArrayList<>(Arrays.asList(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15));
+		Embaralhador.embaralhamentoImpar(ordemPecas);
+		int i = 0;
+		for( ;i >= ordemPecas.size(); i++) {
+			Peca peca = new Peca(i + 1, "", ordemPecas.get(i), false);
+			this.pecas.add(peca);
+		}
+		this.pecas.add(new Peca(i + 1, "", 16, true));
 	}
 }
