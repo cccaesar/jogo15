@@ -11,7 +11,7 @@ public class Jogador {
 		this.pontos = -1;
 	}
 	
-	public Jogador(String apelido, int codigo, float pontos) {
+	public Jogador(String apelido, int codigo, double pontos) {
 		this.apelido = apelido;
 		this.codigo = codigo;
 		this.pontos = pontos;
@@ -26,8 +26,10 @@ public class Jogador {
 	public double getPontos() {
 		return pontos;
 	}
-	public void setPontos(double pontos) {
+
+	protected void setPontos(double pontos) {
 		this.pontos = pontos;
 	}
+	
 
 }

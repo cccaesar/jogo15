@@ -32,7 +32,7 @@ public class Cronometro {
 		tempoDecorrido = 0;
 	}
 	
-	public void adicionarTempoDecorrido() throws Exception {
+	private void adicionarTempoDecorrido() throws Exception {
 		if(this.inicio == null || this.fim == null) {
 			throw new Exception("Não é possivel calcular o tempo decorrido, pois inicio ou fim são nulos.");
 		}
@@ -43,5 +43,9 @@ public class Cronometro {
 	
 	public long getTempoDecorrido() {
 		return this.tempoDecorrido;
+	}
+	
+	public boolean getContagemAcabou() {
+		return (inicio == null && fim == null);
 	}
 }
