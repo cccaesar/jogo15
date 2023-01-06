@@ -17,9 +17,15 @@ public class Jogador {
 		this.pontos = pontos;
 	}
 
+
 	public String getApelido() {
 		return apelido;
 	}
+
+	public void setApelido(String apelido) {
+		this.apelido = apelido;
+	}
+
 	public int getCodigo() {
 		return codigo;
 	}
