@@ -1,18 +1,28 @@
 package negocio;
 
+import java.util.List;
+
 public class Partida {
-	private Jogador jogador;
+	private List<Jogador> jogadores;
 	private Tabuleiro tabuleiro;
 	private Cronometro cronometro;
-
+	private int vez;
 	
-	Partida(Jogador jogador, boolean emparalhamentoImpar){
-		this.jogador = jogador;
+
+	public Partida(Tabuleiro tabuleiro, int vez) {
+		this.vez = vez;
+		this.tabuleiro = tabuleiro;
+	}
+	
+	public Partida(Jogador jogador, boolean emparalhamentoImpar){
+		this.jogadores.add(jogador);
 		this.cronometro = new Cronometro();
+		this.tabuleiro = new Tabuleiro();
+		this.vez = 0;
 		if(emparalhamentoImpar) {
-			embaralharImpar();
+			tabuleiro.embaralharImpar();
 		} else {
-			embaralharPar();
+			tabuleiro.embaralharPar();
 		}
 		cronometro.inciarContagem();
 	}
@@ -23,25 +33,25 @@ public class Partida {
 		//Categoria 3 -> pontuacao do vencendor entre 600 segundos e 5999 segundos 
 		
 		//Pontos alterados para 1000 devido a Categoria 1, a medida que o tempo passa a pontuacao muda
-		jogador.setPontos(1000);
+		jogadores.get(vez).setPontos(1000);
 		
-		while(jogador.getPontos() != 0) {
+		while(jogadores.get(vez).getPontos() != 0) {
 		
 			if(cronometro.getTempoDecorrido() < 60) {
 				// Categoria 1
 				
-				jogador.setPontos(jogador.getPontos() +  (59 - cronometro.getTempoDecorrido()) * (50/3));
+				jogadores.get(vez).setPontos(jogadores.get(vez).getPontos() +  (59 - cronometro.getTempoDecorrido()) * (50/3));
 			}
 		
 			if(cronometro.getTempoDecorrido() >= 60 && cronometro.getTempoDecorrido() < 599) {
 				// Categoria 2
 				
-				jogador.setPontos(100);
+				jogadores.get(vez).setPontos(100);
 				long tempoDeSobra = 599 - cronometro.getTempoDecorrido() - 59;
 				
 				// Subtraido os 59 segundos iniciais, por nao fazerem parte da nova categoria de pontuacao
 				
-				jogador.setPontos( jogador.getPontos() + (tempoDeSobra * 6));
+				jogadores.get(vez).setPontos( jogadores.get(vez).getPontos() + (tempoDeSobra * 6));
 			}
 			
 				//Adicionando novamente 59 segundos, para que a verificacao do tempo seja correta
@@ -51,34 +61,38 @@ public class Partida {
 				//Categoria 3
 				// Subtraido os 599 segundos intermediarios, por nao fazerem parte da nova categoria de pontuacao
 				long tempoDeSobra = 5999 - cronometro.getTempoDecorrido() - 599;
-				jogador.setPontos(10);
+				jogadores.get(vez).setPontos(10);
 				
-				jogador.setPontos( jogador.getPontos() + (tempoDeSobra * 1/600));
+				jogadores.get(vez).setPontos( jogadores.get(vez).getPontos() + (tempoDeSobra * 1/600));
 			}
-			
 		}
 
-	}
-	
-	public void embaralharPar() {
-
-	}
-	
-	public void embaralharImpar() {
-		
 	}
 	
 	public boolean verificarVitoria() {
 		if(getTabuleiro().getResolvido()) {
 			cronometro.pausarContagem();
 			this.pontuar();
+			if(this.vez < this.jogadores.size() - 1) {
+				this.vez++;
+			} else {
+				//Mandar a interface exibir o placar da partida e depois o histórico
+			}
 			return true;
 		}
 		return false;
 	}
 	
-	public Jogador getJogador() {
-		return jogador;
+	public void addJogador(Jogador jogador) throws Exception {
+		if(jogadores.size() > 3) {
+			jogadores.add(jogador);
+		} else {
+			throw new Exception("Partida já contem o máximo de jogadores");
+		}
+	}
+	
+	public List<Jogador> getJogadores() {
+		return jogadores;
 	}
 	
 	public Tabuleiro getTabuleiro() {
@@ -87,6 +101,10 @@ public class Partida {
 	
 	public Cronometro getCronometro() {
 		return this.cronometro;
+	}
+	
+	public int getVez() {
+		return vez;
 	}
 	
 	public void pausarPartida() {
