@@ -25,7 +25,6 @@ public class Cronometro {
 		}
 	}
 	
-	//To-do deletar esse metodo 
 	public void reiniciarContagem() {
 		inciarContagem();
 		this.fim = null;

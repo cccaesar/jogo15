@@ -18,8 +18,9 @@ public class JogadorDAO {
     public void createJogadorTable() throws Exception {
     	Statement stmt = conn.getConexao().createStatement();
     	stmt.executeUpdate("create table if not exists Jogador ( "+
-    					   "codigo INTEGER primary key," +
+    					   "cod_jogador INTEGER primary key," +
     					   "apelido VARCHAR(40) unique not null," +
+    					   "cod_partida integer, foreign key(cod_partida) references Partida()" +
     					   "pontos float);");
     }
 	
@@ -28,7 +29,7 @@ public class JogadorDAO {
 		ResultSet rs = stmt.executeQuery("Select * from Jogador");
 		List<Jogador> jogadores = new ArrayList<Jogador>();
 		while(rs.next()) {
-			Jogador jogador = new Jogador(rs.getString("apelido"), rs.getInt("codigo"), rs.getFloat("pontos"));
+			Jogador jogador = new Jogador(rs.getString("apelido"), rs.getInt("cod_jogador"), rs.getFloat("pontos"));
 			jogadores.add(jogador);
 		}
 		if(jogadores.size() == 0) {
@@ -42,27 +43,25 @@ public class JogadorDAO {
 		ResultSet rs = stmt.executeQuery("Select * from Jogador where apelido='"+apelido+"'");
 		Jogador jogador = null;
 		while(rs.next()) {
-			jogador = new Jogador(rs.getString("apelido"), rs.getInt("codigo"), rs.getFloat("pontos"));
+			jogador = new Jogador(rs.getString("apelido"), rs.getInt("cod_jogador"), rs.getFloat("pontos"));
 		}
 		return jogador;
 	}
 	
 	public Jogador getJogador(int codigo) throws Exception {
 		Statement stmt = conn.getConexao().createStatement();
-		ResultSet rs = stmt.executeQuery("Select * from Jogador where codigo="+codigo+";");
-		System.out.println("Select * from Jogador where codigo="+codigo+";");
+		ResultSet rs = stmt.executeQuery("Select * from Jogador where cod_jogador="+codigo+";");
 		Jogador jogador = null;
 		while(rs.next()) {
-			jogador = new Jogador(rs.getString("apelido"), rs.getInt("codigo"), rs.getFloat("pontos"));
+			jogador = new Jogador(rs.getString("apelido"), rs.getInt("cod_jogador"), rs.getFloat("pontos"));
 		}
 		return jogador;
 	}
 	
 	public void insertJogador(Jogador jogador) throws Exception {
 		Statement stmt = conn.getConexao().createStatement();
-		String updateQuery = jogador.getPontos() == -1 ? "Insert into JOGADOR(codigo, apelido) values("+jogador.getCodigo()+",'"+jogador.getApelido()+"');" : 
-			"Insert into JOGADOR(codigo, apelido, pontos) values("+jogador.getCodigo()  +",'"+jogador.getApelido()+"',"+jogador.getPontos()+");";
-		System.out.println(updateQuery);
+		String updateQuery = jogador.getPontos() == -1 ? "Insert into JOGADOR(cod_jogador, apelido) values("+jogador.getCodigo()+",'"+jogador.getApelido()+"');" : 
+			"Insert into JOGADOR(cod_jogador, apelido, pontos) values("+jogador.getCodigo()  +",'"+jogador.getApelido()+"',"+jogador.getPontos()+");";
 		stmt.executeUpdate(updateQuery);
 	}
 	
@@ -75,7 +74,7 @@ public class JogadorDAO {
 		Statement stmt = conn.getConexao().createStatement();
 		stmt.executeUpdate("update JOGADOR "
 				+"set pontos="+pontos
-				+" where codigo="+codigo);
+				+" where cod_jogador="+codigo);
 	}
 	
 	public void updateJogadorPontos(float pontos, String apelido) throws Exception {

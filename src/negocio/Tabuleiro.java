@@ -8,10 +8,18 @@ public class Tabuleiro {
 	private Peca pecaSelecionada1;
 	private Peca pecaSelecionada2;
 	private boolean resolvido;
-
-	Tabuleiro(List<Peca> pecas ){
-		this.pecas = pecas;
+	
+	Tabuleiro() {
+		pecaSelecionada1 = null;
+		pecaSelecionada2 = null;
 		resolvido = false;
+	}
+	
+	public Tabuleiro(List<Peca> pecas, boolean resolvido){
+		this.pecas = pecas;
+		this.resolvido = resolvido;
+		pecaSelecionada1 = null;
+		pecaSelecionada2 = null;
 	}
 	
 	public boolean verificarValidadeDoMovimento() {
@@ -69,6 +77,10 @@ public class Tabuleiro {
 	
 	public boolean getResolvido() {
 		return this.resolvido;
+	}
+	
+	public List<Peca> getPecas() {
+		return this.pecas;
 	}
 	
 	public void embaralharPar() {
