@@ -3,7 +3,11 @@ package ui;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
-import javax.swing.JCheckBox;
+import javax.swing.JButton;
+import javax.swing.SwingConstants;
+import javax.swing.ImageIcon;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Jogo15 {
 
@@ -41,69 +45,84 @@ public class Jogo15 {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JCheckBox chckbxNewCheckBox = new JCheckBox("1");
-		chckbxNewCheckBox.setBounds(36, 37, 31, 21);
-		frame.getContentPane().add(chckbxNewCheckBox);
+		JButton btnNewButton_1 = new JButton("New button");
+		btnNewButton_1.setIcon(new ImageIcon("C:\\Users\\charm\\OneDrive\\\u00C1rea de Trabalho\\Jogo15\\jogo15\\Img\\01.png"));
+		btnNewButton_1.setBounds(10, 10, 66, 58);
+		frame.getContentPane().add(btnNewButton_1);
 		
-		JCheckBox chckbxNewCheckBox_1 = new JCheckBox("2");
-		chckbxNewCheckBox_1.setBounds(81, 37, 31, 21);
-		frame.getContentPane().add(chckbxNewCheckBox_1);
+		JButton btnNewButton_1_1 = new JButton("New button");
+		btnNewButton_1_1.setIcon(new ImageIcon("C:\\Users\\charm\\OneDrive\\\u00C1rea de Trabalho\\Jogo15\\jogo15\\Img\\05.png"));
+		btnNewButton_1_1.setBounds(10, 69, 66, 58);
+		frame.getContentPane().add(btnNewButton_1_1);
 		
-		JCheckBox chckbxNewCheckBox_1_1 = new JCheckBox("4");
-		chckbxNewCheckBox_1_1.setBounds(154, 37, 31, 21);
-		frame.getContentPane().add(chckbxNewCheckBox_1_1);
+		JButton btnNewButton_1_1_1 = new JButton("New button");
+		btnNewButton_1_1_1.setIcon(new ImageIcon("C:\\Users\\charm\\OneDrive\\\u00C1rea de Trabalho\\Jogo15\\jogo15\\Img\\09.png"));
+		btnNewButton_1_1_1.setBounds(10, 125, 66, 58);
+		frame.getContentPane().add(btnNewButton_1_1_1);
 		
-		JCheckBox chckbxNewCheckBox_1_1_1 = new JCheckBox("3");
-		chckbxNewCheckBox_1_1_1.setBounds(114, 37, 31, 21);
-		frame.getContentPane().add(chckbxNewCheckBox_1_1_1);
+		JButton btnNewButton_1_1_1_1 = new JButton("New button");
+		btnNewButton_1_1_1_1.setIcon(new ImageIcon("C:\\Users\\charm\\OneDrive\\\u00C1rea de Trabalho\\Jogo15\\jogo15\\Img\\13.png"));
+		btnNewButton_1_1_1_1.setBounds(10, 182, 66, 58);
+		frame.getContentPane().add(btnNewButton_1_1_1_1);
 		
-		JCheckBox chckbxNewCheckBox_2 = new JCheckBox("5");
-		chckbxNewCheckBox_2.setBounds(36, 65, 31, 21);
-		frame.getContentPane().add(chckbxNewCheckBox_2);
+		JButton btnNewButton_1_2 = new JButton("New button");
+		btnNewButton_1_2.setIcon(new ImageIcon("C:\\Users\\charm\\OneDrive\\\u00C1rea de Trabalho\\Jogo15\\jogo15\\Img\\02 (1).png"));
+		btnNewButton_1_2.setBounds(77, 10, 66, 58);
+		frame.getContentPane().add(btnNewButton_1_2);
 		
-		JCheckBox chckbxNewCheckBox_1_2 = new JCheckBox("6");
-		chckbxNewCheckBox_1_2.setBounds(81, 65, 31, 21);
-		frame.getContentPane().add(chckbxNewCheckBox_1_2);
+		JButton btnNewButton_1_2_1 = new JButton("New button");
+		btnNewButton_1_2_1.setIcon(new ImageIcon("C:\\Users\\charm\\OneDrive\\\u00C1rea de Trabalho\\Jogo15\\jogo15\\Img\\03x.png"));
+		btnNewButton_1_2_1.setBounds(144, 10, 66, 58);
+		frame.getContentPane().add(btnNewButton_1_2_1);
 		
-		JCheckBox chckbxNewCheckBox_1_1_1_1 = new JCheckBox("7");
-		chckbxNewCheckBox_1_1_1_1.setBounds(114, 65, 31, 21);
-		frame.getContentPane().add(chckbxNewCheckBox_1_1_1_1);
+		JButton btnNewButton_1_2_1_1 = new JButton("New button");
+		btnNewButton_1_2_1_1.setIcon(new ImageIcon("C:\\Users\\charm\\OneDrive\\\u00C1rea de Trabalho\\Jogo15\\jogo15\\Img\\06.png"));
+		btnNewButton_1_2_1_1.setBounds(77, 69, 66, 58);
+		frame.getContentPane().add(btnNewButton_1_2_1_1);
 		
-		JCheckBox chckbxNewCheckBox_1_1_2 = new JCheckBox("8");
-		chckbxNewCheckBox_1_1_2.setBounds(154, 65, 31, 21);
-		frame.getContentPane().add(chckbxNewCheckBox_1_1_2);
+		JButton btnNewButton_1_2_1_1_1 = new JButton("New button");
+		btnNewButton_1_2_1_1_1.setIcon(new ImageIcon("C:\\Users\\charm\\OneDrive\\\u00C1rea de Trabalho\\Jogo15\\jogo15\\Img\\10.png"));
+		btnNewButton_1_2_1_1_1.setBounds(77, 125, 66, 58);
+		frame.getContentPane().add(btnNewButton_1_2_1_1_1);
 		
-		JCheckBox chckbxNewCheckBox_2_1 = new JCheckBox("9");
-		chckbxNewCheckBox_2_1.setBounds(36, 88, 31, 21);
-		frame.getContentPane().add(chckbxNewCheckBox_2_1);
+		JButton btnNewButton_1_2_1_1_2 = new JButton("New button");
+		btnNewButton_1_2_1_1_2.setIcon(new ImageIcon("C:\\Users\\charm\\OneDrive\\\u00C1rea de Trabalho\\Jogo15\\jogo15\\Img\\14.png"));
+		btnNewButton_1_2_1_1_2.setBounds(77, 182, 66, 58);
+		frame.getContentPane().add(btnNewButton_1_2_1_1_2);
 		
-		JCheckBox chckbxNewCheckBox_1_2_1 = new JCheckBox("10");
-		chckbxNewCheckBox_1_2_1.setBounds(81, 88, 31, 21);
-		frame.getContentPane().add(chckbxNewCheckBox_1_2_1);
+		JButton btnNewButton_1_2_1_1_3 = new JButton("New button");
+		btnNewButton_1_2_1_1_3.setIcon(new ImageIcon("C:\\Users\\charm\\OneDrive\\\u00C1rea de Trabalho\\Jogo15\\jogo15\\Img\\15.png"));
+		btnNewButton_1_2_1_1_3.setBounds(144, 182, 66, 58);
+		frame.getContentPane().add(btnNewButton_1_2_1_1_3);
 		
-		JCheckBox chckbxNewCheckBox_1_1_1_1_1 = new JCheckBox("11");
-		chckbxNewCheckBox_1_1_1_1_1.setBounds(114, 88, 31, 21);
-		frame.getContentPane().add(chckbxNewCheckBox_1_1_1_1_1);
+		JButton btnNewButton_1_2_1_1_4 = new JButton("");
+		btnNewButton_1_2_1_1_4.setBounds(211, 182, 66, 58);
+		frame.getContentPane().add(btnNewButton_1_2_1_1_4);
 		
-		JCheckBox chckbxNewCheckBox_1_1_2_1 = new JCheckBox("12");
-		chckbxNewCheckBox_1_1_2_1.setBounds(154, 88, 31, 21);
-		frame.getContentPane().add(chckbxNewCheckBox_1_1_2_1);
+		JButton btnNewButton_1_2_1_1_5 = new JButton("New button");
+		btnNewButton_1_2_1_1_5.setIcon(new ImageIcon("C:\\Users\\charm\\OneDrive\\\u00C1rea de Trabalho\\Jogo15\\jogo15\\Img\\11.png"));
+		btnNewButton_1_2_1_1_5.setBounds(144, 125, 66, 58);
+		frame.getContentPane().add(btnNewButton_1_2_1_1_5);
 		
-		JCheckBox chckbxNewCheckBox_2_1_1 = new JCheckBox("13");
-		chckbxNewCheckBox_2_1_1.setBounds(36, 118, 31, 21);
-		frame.getContentPane().add(chckbxNewCheckBox_2_1_1);
+		JButton btnNewButton_1_2_1_1_6 = new JButton("New button");
+		btnNewButton_1_2_1_1_6.setIcon(new ImageIcon("C:\\Users\\charm\\OneDrive\\\u00C1rea de Trabalho\\Jogo15\\jogo15\\Img\\07.png"));
+		btnNewButton_1_2_1_1_6.setBounds(144, 69, 66, 58);
+		frame.getContentPane().add(btnNewButton_1_2_1_1_6);
 		
-		JCheckBox chckbxNewCheckBox_1_2_1_1 = new JCheckBox("14");
-		chckbxNewCheckBox_1_2_1_1.setBounds(81, 118, 31, 21);
-		frame.getContentPane().add(chckbxNewCheckBox_1_2_1_1);
+		JButton btnNewButton_1_2_1_1_7 = new JButton("New button");
+		btnNewButton_1_2_1_1_7.setIcon(new ImageIcon("C:\\Users\\charm\\OneDrive\\\u00C1rea de Trabalho\\Jogo15\\jogo15\\Img\\12.png"));
+		btnNewButton_1_2_1_1_7.setBounds(211, 125, 66, 58);
+		frame.getContentPane().add(btnNewButton_1_2_1_1_7);
 		
-		JCheckBox chckbxNewCheckBox_1_1_1_1_1_1 = new JCheckBox("15");
-		chckbxNewCheckBox_1_1_1_1_1_1.setBounds(114, 118, 31, 21);
-		frame.getContentPane().add(chckbxNewCheckBox_1_1_1_1_1_1);
+		JButton btnNewButton_1_2_1_1_8 = new JButton("New button");
+		btnNewButton_1_2_1_1_8.setIcon(new ImageIcon("C:\\Users\\charm\\OneDrive\\\u00C1rea de Trabalho\\Jogo15\\jogo15\\Img\\05.png"));
+		btnNewButton_1_2_1_1_8.setBounds(211, 69, 66, 58);
+		frame.getContentPane().add(btnNewButton_1_2_1_1_8);
 		
-		JCheckBox chckbxNewCheckBox_1_1_2_1_1 = new JCheckBox("16");
-		chckbxNewCheckBox_1_1_2_1_1.setBounds(154, 118, 31, 21);
-		frame.getContentPane().add(chckbxNewCheckBox_1_1_2_1_1);
+		JButton btnNewButton_1_2_1_1_8_1 = new JButton("New button");
+		btnNewButton_1_2_1_1_8_1.setIcon(new ImageIcon("C:\\Users\\charm\\OneDrive\\\u00C1rea de Trabalho\\Jogo15\\jogo15\\Img\\04.png"));
+		btnNewButton_1_2_1_1_8_1.setBounds(211, 10, 66, 58);
+		frame.getContentPane().add(btnNewButton_1_2_1_1_8_1);
 	}
 
 }

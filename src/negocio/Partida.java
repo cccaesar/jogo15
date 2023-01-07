@@ -6,7 +6,7 @@ public class Partida {
 	private Cronometro cronometro;
 
 	
-	Partida(Jogador jogador, boolean emparalhamentoImpar){
+	public Partida(Jogador jogador, boolean emparalhamentoImpar){
 		this.jogador = jogador;
 		this.cronometro = new Cronometro();
 		if(emparalhamentoImpar) {

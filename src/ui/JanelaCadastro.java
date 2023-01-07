@@ -84,12 +84,12 @@ public class JanelaCadastro {
 		frame.getContentPane().add(comboBox);
 		
 		JRadioButton rdbtnOp1 = new JRadioButton("Opcao 1");
-		rdbtnOp1.setBounds(110, 168, 63, 21);
+		rdbtnOp1.setBounds(110, 168, 85, 21);
 		frame.getContentPane().add(rdbtnOp1);
 		rdbtnOp1.setEnabled(false);
 		
 		JRadioButton rdbtnOp2 = new JRadioButton("Opcao 2");
-		rdbtnOp2.setBounds(281, 168, 63, 21);
+		rdbtnOp2.setBounds(281, 168, 81, 21);
 		frame.getContentPane().add(rdbtnOp2);
 		rdbtnOp2.setEnabled(false);
 		
