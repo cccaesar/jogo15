@@ -25,6 +25,7 @@ import javax.swing.ComboBoxModel;
 import javax.swing.JRadioButton;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
 
 public class JanelaCadastro {
 
@@ -43,6 +44,7 @@ public class JanelaCadastro {
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
+				
 				try {
 					JanelaCadastro window = new JanelaCadastro();
 					window.frame.setVisible(true);
@@ -117,13 +119,30 @@ public class JanelaCadastro {
 		
 		btCadastrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-					if(e.getSource()==btCadastrar && !tfApelido.getText().isEmpty()) {
-						jogadorCriado = (new Jogador(tfApelido.getText(),codigo+=1));	
-						partida = new Partida(jogadorCriado, false);
-						JOptionPane.showMessageDialog(btCadastrar, "Sucesso !!");
-						btStart.setEnabled(true);
-						rdbtnOp1.setEnabled(true);
-						rdbtnOp2.setEnabled(true);
+			
+				if(e.getSource()==btCadastrar && !tfApelido.getText().isEmpty()) {
+						jogadorCriado = (new Jogador(tfApelido.getText(),codigo+=1));
+						
+						if (partida == null || partida.getJogadores().size() == 0) {
+							partida = new Partida(jogadorCriado, false);
+							JOptionPane.showMessageDialog(btCadastrar, "j=00 !!");
+						}
+						if (partida.getJogadores().isEmpty()) {	
+							partida.addJogadores(jogadorCriado);
+							JOptionPane.showMessageDialog(btCadastrar, "Sucesso !!");
+							comboBox.setModel(new DefaultComboBoxModel(new String[] {jogadorCriado.getApelido()}));
+						}
+						
+						else if (! partida.getJogadores().isEmpty()) {
+						
+									partida.addJogadores(jogadorCriado);
+									JOptionPane.showMessageDialog(btCadastrar, "Diferente !!");
+									comboBox.addItem(jogadorCriado.getApelido());
+											
+						}
+							btStart.setEnabled(true);
+							rdbtnOp1.setEnabled(true);
+							rdbtnOp2.setEnabled(true);
 						}
 					else {
 						JOptionPane.showMessageDialog(btCadastrar, "Digite um Apelido !!");

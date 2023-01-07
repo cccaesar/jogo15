@@ -1,14 +1,19 @@
 package negocio;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+
 public class Partida {
 	private Jogador jogador;
 	private Tabuleiro tabuleiro;
 	private Cronometro cronometro;
+	private ArrayList<Jogador> jogadores;
 
-	
 	public Partida(Jogador jogador, boolean emparalhamentoImpar){
 		this.jogador = jogador;
 		this.cronometro = new Cronometro();
+		this.jogadores= new ArrayList<Jogador>();
+		
 		if(emparalhamentoImpar) {
 			embaralharImpar();
 		} else {
@@ -24,6 +29,7 @@ public class Partida {
 		
 		//Pontos alterados para 1000 devido a Categoria 1, a medida que o tempo passa a pontuacao muda
 		jogador.setPontos(1000);
+		
 		
 		while(jogador.getPontos() != 0) {
 		
@@ -92,4 +98,18 @@ public class Partida {
 	public void pausarPartida() {
 		cronometro.pausarContagem();
 	}
+
+	public ArrayList<Jogador> getJogadores() {
+		return jogadores;
+	}
+	
+	public void addJogadores(Jogador jogador) {
+
+		this.getJogadores().add(jogador);
+	}
+
+	public void setJogadores(ArrayList<Jogador> jogadores) {
+		this.jogadores = jogadores;
+	}
+	
 }

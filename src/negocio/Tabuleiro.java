@@ -4,6 +4,7 @@ import java.util.*;
 
 public class Tabuleiro {
 	private List<Peca> pecas;
+	private Peca peca;
 	private Peca pecaSelecionada1;
 	private Peca pecaSelecionada2;
 	private boolean resolvido;
@@ -91,4 +92,14 @@ public class Tabuleiro {
 		}
 		this.pecas.add(new Peca(i + 1, "", 16, true));
 	}
+
+	public Peca getPeca() {
+		return peca;
+	}
+
+	public void setPeca(Peca peca) {
+		this.peca = peca;
+	}
+	
+	
 }

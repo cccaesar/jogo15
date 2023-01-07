@@ -51,7 +51,7 @@ public class Jogo15 {
 		frame.getContentPane().add(btnNewButton_1);
 		
 		JButton btnNewButton_1_1 = new JButton("New button");
-		btnNewButton_1_1.setIcon(new ImageIcon("C:\\Users\\charm\\OneDrive\\\u00C1rea de Trabalho\\Jogo15\\jogo15\\Img\\05.png"));
+		btnNewButton_1_1.setIcon(new ImageIcon("C:\\Users\\charm\\OneDrive\\\u00C1rea de Trabalho\\Jogo15\\jogo15\\Img\\08.png"));
 		btnNewButton_1_1.setBounds(10, 69, 66, 58);
 		frame.getContentPane().add(btnNewButton_1_1);
 		
@@ -61,7 +61,7 @@ public class Jogo15 {
 		frame.getContentPane().add(btnNewButton_1_1_1);
 		
 		JButton btnNewButton_1_1_1_1 = new JButton("New button");
-		btnNewButton_1_1_1_1.setIcon(new ImageIcon("C:\\Users\\charm\\OneDrive\\\u00C1rea de Trabalho\\Jogo15\\jogo15\\Img\\13.png"));
+		btnNewButton_1_1_1_1.setIcon(new ImageIcon("C:\\Users\\charm\\OneDrive\\\u00C1rea de Trabalho\\Jogo15\\jogo15\\Img\\11 (1).png"));
 		btnNewButton_1_1_1_1.setBounds(10, 182, 66, 58);
 		frame.getContentPane().add(btnNewButton_1_1_1_1);
 		
@@ -76,7 +76,7 @@ public class Jogo15 {
 		frame.getContentPane().add(btnNewButton_1_2_1);
 		
 		JButton btnNewButton_1_2_1_1 = new JButton("New button");
-		btnNewButton_1_2_1_1.setIcon(new ImageIcon("C:\\Users\\charm\\OneDrive\\\u00C1rea de Trabalho\\Jogo15\\jogo15\\Img\\06.png"));
+		btnNewButton_1_2_1_1.setIcon(new ImageIcon("C:\\Users\\charm\\OneDrive\\\u00C1rea de Trabalho\\Jogo15\\jogo15\\Img\\07.png"));
 		btnNewButton_1_2_1_1.setBounds(77, 69, 66, 58);
 		frame.getContentPane().add(btnNewButton_1_2_1_1);
 		
@@ -86,12 +86,12 @@ public class Jogo15 {
 		frame.getContentPane().add(btnNewButton_1_2_1_1_1);
 		
 		JButton btnNewButton_1_2_1_1_2 = new JButton("New button");
-		btnNewButton_1_2_1_1_2.setIcon(new ImageIcon("C:\\Users\\charm\\OneDrive\\\u00C1rea de Trabalho\\Jogo15\\jogo15\\Img\\14.png"));
+		btnNewButton_1_2_1_1_2.setIcon(new ImageIcon("C:\\Users\\charm\\OneDrive\\\u00C1rea de Trabalho\\Jogo15\\jogo15\\Img\\15.png"));
 		btnNewButton_1_2_1_1_2.setBounds(77, 182, 66, 58);
 		frame.getContentPane().add(btnNewButton_1_2_1_1_2);
 		
 		JButton btnNewButton_1_2_1_1_3 = new JButton("New button");
-		btnNewButton_1_2_1_1_3.setIcon(new ImageIcon("C:\\Users\\charm\\OneDrive\\\u00C1rea de Trabalho\\Jogo15\\jogo15\\Img\\15.png"));
+		btnNewButton_1_2_1_1_3.setIcon(new ImageIcon("C:\\Users\\charm\\OneDrive\\\u00C1rea de Trabalho\\Jogo15\\jogo15\\Img\\14.png"));
 		btnNewButton_1_2_1_1_3.setBounds(144, 182, 66, 58);
 		frame.getContentPane().add(btnNewButton_1_2_1_1_3);
 		
@@ -105,7 +105,7 @@ public class Jogo15 {
 		frame.getContentPane().add(btnNewButton_1_2_1_1_5);
 		
 		JButton btnNewButton_1_2_1_1_6 = new JButton("New button");
-		btnNewButton_1_2_1_1_6.setIcon(new ImageIcon("C:\\Users\\charm\\OneDrive\\\u00C1rea de Trabalho\\Jogo15\\jogo15\\Img\\07.png"));
+		btnNewButton_1_2_1_1_6.setIcon(new ImageIcon("C:\\Users\\charm\\OneDrive\\\u00C1rea de Trabalho\\Jogo15\\jogo15\\Img\\06.png"));
 		btnNewButton_1_2_1_1_6.setBounds(144, 69, 66, 58);
 		frame.getContentPane().add(btnNewButton_1_2_1_1_6);
 		
