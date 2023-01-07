@@ -76,7 +76,7 @@ public class Partida {
 			if(this.vez < this.jogadores.size() - 1) {
 				this.vez++;
 			} else {
-				//Mandar a interface exibir o placar da partida e depois o histórico
+				//Mandar a interface exibir o placar da partida e depois o histï¿½rico
 			}
 			return true;
 		}
@@ -87,7 +87,7 @@ public class Partida {
 		if(jogadores.size() > 3) {
 			jogadores.add(jogador);
 		} else {
-			throw new Exception("Partida já contem o máximo de jogadores");
+			throw new Exception("Partida jï¿½ contem o mï¿½ximo de jogadores");
 		}
 	}
 	

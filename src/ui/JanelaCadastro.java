@@ -5,9 +5,8 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
 
-
 import negocio.Jogador;
-
+import negocio.Partida;
 
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -17,17 +16,27 @@ import javax.swing.JButton;
 import javax.swing.AbstractAction;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.Iterator;
 
 import javax.swing.Action;
+import javax.swing.ButtonGroup;
+import javax.swing.ComboBoxModel;
+import javax.swing.JRadioButton;
+import javax.swing.JCheckBox;
+import javax.swing.JComboBox;
 
 public class JanelaCadastro {
 
 	private JFrame frame;
 	private JTextField tfApelido;
-	private JButton btJogar;
-	private Jogador jogador;
+	private JButton btStart;
+	private Jogador jogadorCriado;
+	private Partida partida;
 	private int codigo = 0;
-
+	private ArrayList<Jogador> Jogadores;
+	private JComboBox comboBox;
+	
 	/**
 	 * Launch the application.
 	 */
@@ -70,22 +79,58 @@ public class JanelaCadastro {
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 12));
 		frame.getContentPane().add(lblNewLabel);
 		
-		btJogar = new JButton("Jogar");
-		btJogar.setFont(new Font("Tahoma", Font.BOLD, 12));
-		btJogar.setBounds(189, 84, 85, 21);
-		frame.getContentPane().add(btJogar);
+		JComboBox<String> comboBox = new JComboBox<String>();
+		comboBox.setBounds(83, 133, 279, 21);
+		frame.getContentPane().add(comboBox);
 		
-		btJogar.addActionListener(new ActionListener() {
+		JRadioButton rdbtnOp1 = new JRadioButton("Opcao 1");
+		rdbtnOp1.setBounds(110, 168, 85, 21);
+		frame.getContentPane().add(rdbtnOp1);
+		rdbtnOp1.setEnabled(false);
+		
+		JRadioButton rdbtnOp2 = new JRadioButton("Opcao 2");
+		rdbtnOp2.setBounds(281, 168, 81, 21);
+		frame.getContentPane().add(rdbtnOp2);
+		rdbtnOp2.setEnabled(false);
+		
+		ButtonGroup bg = new ButtonGroup();
+		bg.add(rdbtnOp1);
+		bg.add(rdbtnOp2);
+		
+		
+		btStart = new JButton("Start");
+		btStart.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-					if(e.getSource()==btJogar && !tfApelido.getText().isEmpty()) {
-						jogador = (new Jogador(tfApelido.getText(),codigo+=1));	
-						JOptionPane.showMessageDialog(btJogar, "Sucesso !!");
-					}
-					else {
-						JOptionPane.showMessageDialog(btJogar, "Digite um Apelido !!");
-					}	
+				Jogo15 j= new Jogo15();
+				frame.dispose();
+				
 			}
 		});
+		btStart.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btStart.setBounds(190, 206, 85, 21);
+		frame.getContentPane().add(btStart);
+		
+		JButton btCadastrar = new JButton("Cadastrar");
+		btCadastrar.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btCadastrar.setBounds(173, 82, 106, 21);
+		frame.getContentPane().add(btCadastrar);
+		
+		btCadastrar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+					if(e.getSource()==btCadastrar && !tfApelido.getText().isEmpty()) {
+						jogadorCriado = (new Jogador(tfApelido.getText(),codigo+=1));	
+						partida = new Partida(jogadorCriado, false);
+						JOptionPane.showMessageDialog(btCadastrar, "Sucesso !!");
+						btStart.setEnabled(true);
+						rdbtnOp1.setEnabled(true);
+						rdbtnOp2.setEnabled(true);
+						}
+					else {
+						JOptionPane.showMessageDialog(btCadastrar, "Digite um Apelido !!");
+					}		
+			}
+		});
+		btStart.setEnabled(false);		
+		
 	}
-
 }
