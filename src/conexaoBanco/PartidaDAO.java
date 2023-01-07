@@ -17,6 +17,11 @@ public class PartidaDAO {
     	conn = new ConexaoSQL();
     }
 	
+    public void dropPartidaTable() throws Exception {
+    	Statement stmt = conn.getConexao().createStatement();
+    	stmt.executeUpdate("drop table Partida;");
+    }
+	
     public void createPartidaTable() throws Exception {
     	Statement stmt = conn.getConexao().createStatement();
     	stmt.executeUpdate("create table if not exists Partida ( "+

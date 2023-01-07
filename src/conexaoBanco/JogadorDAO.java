@@ -15,13 +15,18 @@ public class JogadorDAO {
     	conn = new ConexaoSQL();
     }
     
+    public void dropJogadorTable() throws Exception {
+    	Statement stmt = conn.getConexao().createStatement();
+    	stmt.executeUpdate("drop table Jogador;");
+    }
+    
     public void createJogadorTable() throws Exception {
     	Statement stmt = conn.getConexao().createStatement();
     	stmt.executeUpdate("create table if not exists Jogador ( "+
     					   "cod_jogador INTEGER primary key," +
     					   "apelido VARCHAR(40) unique not null," +
-    					   "cod_partida integer, foreign key(cod_partida) references Partida()" +
-    					   "pontos float);");
+    					   "pontos float,"+
+    					   "cod_partida integer, foreign key(cod_partida) references Partida(cod_partida));");
     }
 	
 	public List<Jogador> getJogadores() throws Exception {

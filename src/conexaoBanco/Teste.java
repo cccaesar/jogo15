@@ -9,10 +9,11 @@ public class Teste {
 		JogadorDAO jdao = new JogadorDAO();
 		Jogador j1,j2;
 		try {
-			jdao.createJogadorTable();
+			jdao.dropJogadorTable();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		/*
 		try {
 			jdao.insertJogador(new Jogador( "Teste I",  10));
 			jdao.insertJogador(new Jogador( "Teste II",  11));
@@ -50,6 +51,7 @@ public class Teste {
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
+		*/
 	}
 
 }

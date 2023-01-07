@@ -3,7 +3,7 @@ package negocio;
 import java.util.*;
 
 public class Tabuleiro {
-	private List<Peca> pecas;
+	private List<Peca> pecas = new ArrayList<Peca>();
 	private Peca pecaSelecionada1;
 	private Peca pecaSelecionada2;
 	private boolean resolvido;

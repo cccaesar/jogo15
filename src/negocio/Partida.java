@@ -1,21 +1,42 @@
 package negocio;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import conexaoBanco.JogadorDAO;
+
 public class Partida {
-	private List<Jogador> jogadores;
+	private List<Jogador> jogadores = new ArrayList<Jogador>();;
 	private Tabuleiro tabuleiro;
 	private Cronometro cronometro;
 	private int vez;
+	private JogadorDAO jogadorDAO;
 	
 
 	public Partida(Tabuleiro tabuleiro, int vez) {
 		this.vez = vez;
 		this.tabuleiro = tabuleiro;
+		try {
+			jogadorDAO = new JogadorDAO();
+			jogadorDAO.createJogadorTable();	
+		} catch(Exception e) {
+			
+		}
 	}
 	
 	public Partida(Jogador jogador, boolean emparalhamentoImpar){
-		this.jogadores.add(jogador);
+		try {
+			jogadorDAO = new JogadorDAO();
+			jogadorDAO.createJogadorTable();	
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		try {
+			this.addJogador(jogador);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		this.cronometro = new Cronometro();
 		this.tabuleiro = new Tabuleiro();
 		this.vez = 0;
@@ -84,10 +105,16 @@ public class Partida {
 	}
 	
 	public void addJogador(Jogador jogador) throws Exception {
-		if(jogadores.size() > 3) {
-			jogadores.add(jogador);
+		System.out.println(jogadores.size());
+		if(jogadores.size() < 3) {
+			try {
+				jogadorDAO.insertJogador(jogador);
+				jogadores.add(jogador);
+			} catch(Exception e) {
+				e.printStackTrace();
+			}
 		} else {
-			throw new Exception("Partida j� contem o m�ximo de jogadores");
+			throw new Exception("Partida possui o maximo de jogadores");
 		}
 	}
 	
