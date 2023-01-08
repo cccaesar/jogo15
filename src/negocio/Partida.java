@@ -113,7 +113,8 @@ public class Partida {
 		System.out.println(jogadores.size());
 		if(jogadores.size() < 3) {
 			try {
-				jogadorDAO.insertJogador(jogador);
+				int codigo = jogadorDAO.insertJogador(jogador);
+				jogador.setCodigo(codigo);
 				jogadores.add(jogador);
 			} catch(Exception e) {
 				e.printStackTrace();

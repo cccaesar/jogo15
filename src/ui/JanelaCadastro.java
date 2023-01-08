@@ -73,12 +73,12 @@ public class JanelaCadastro {
 		frame.getContentPane().setLayout(null);
 		
 		tfApelido = new JTextField();
-		tfApelido.setBounds(179, 46, 96, 19);
+		tfApelido.setBounds(140, 46, 135, 19);
 		frame.getContentPane().add(tfApelido);
 		tfApelido.setColumns(10);
 		
 		JLabel lblNewLabel = new JLabel("Apelido:");
-		lblNewLabel.setBounds(124, 48, 49, 13);
+		lblNewLabel.setBounds(83, 48, 59, 13);
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 12));
 		frame.getContentPane().add(lblNewLabel);
 		

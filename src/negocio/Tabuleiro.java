@@ -103,14 +103,6 @@ public class Tabuleiro {
 		}
 		this.pecas.add(new Peca(i + 1, "", 16, true));
 	}
-
-	public Peca getPeca() {
-		return peca;
-	}
-
-	public void setPeca(Peca peca) {
-		this.peca = peca;
-	}
 	
 	
 }

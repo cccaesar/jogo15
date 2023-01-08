@@ -25,7 +25,7 @@ public class PartidaDAO {
     public void createPartidaTable() throws Exception {
     	Statement stmt = conn.getConexao().createStatement();
     	stmt.executeUpdate("create table if not exists Partida ( "+
-    					   "cod_partida INTEGER primary key," +
+    					   "cod_partida integer identity(1,1) primary key," +
     					   "posicoes varchar(45) required not null,"+
     					   "imagem integer,"+
     					   "vez integer required not null," +

@@ -37,5 +37,9 @@ public class Jogador {
 		this.pontos = pontos;
 	}
 	
+	protected void setCodigo(int codigo) {
+		this.codigo = codigo;
+	}
+	
 
 }
