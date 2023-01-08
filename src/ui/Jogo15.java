@@ -196,7 +196,7 @@ public class Jogo15 {
 			}
 		});
 		btnNewButton_1_2_1_1_7.setIcon(new ImageIcon("Img/12.png"));
-		btnNewButton_1_2_1_1_7.setBounds(211, 125, 66, 58);
+		btnNewButton_1_2_1_1_7.setBounds(220, 125, 66, 58);
 		frame.getContentPane().add(btnNewButton_1_2_1_1_7);
 		
 		JButton btnNewButton_1_2_1_1_8 = new JButton();

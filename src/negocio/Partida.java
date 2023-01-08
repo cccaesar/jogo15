@@ -21,7 +21,7 @@ public class Partida {
 			jogadorDAO = new JogadorDAO();
 			jogadorDAO.createJogadorTable();	
 		} catch(Exception e) {
-			
+			e.printStackTrace();
 		}
 	}
 

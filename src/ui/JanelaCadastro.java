@@ -137,13 +137,13 @@ public class JanelaCadastro {
 							if (partida.getJogadores().isEmpty()) {	
 								try {
 									partida.addJogador(jogadorCriado);
+									JOptionPane.showMessageDialog(btCadastrar, "Sucesso !!");
+									comboBox.addItem(jogadorCriado.getApelido());
 								} catch (Exception e1) {
 									if(e1.getMessage().indexOf("[SQLITE_CONSTRAINT_UNIQUE] A UNIQUE constraint failed (UNIQUE constraint failed: Jogador.apelido") != -1) {
 										JOptionPane.showMessageDialog(btCadastrar, "ESSE APELIDO JÁ SE ENCONTRA CADASTRADO.");
 									}
 								}
-								JOptionPane.showMessageDialog(btCadastrar, "Sucesso !!");
-								comboBox.addItem(jogadorCriado.getApelido());
 							}
 							
 							else {
@@ -154,6 +154,8 @@ public class JanelaCadastro {
 								} catch(Exception exception) {
 									if(exception.getMessage().indexOf("[SQLITE_CONSTRAINT_UNIQUE] A UNIQUE constraint failed (UNIQUE constraint failed: Jogador.apelido") != -1) {
 										JOptionPane.showMessageDialog(btCadastrar, "ESSE APELIDO JÁ SE ENCONTRA CADASTRADO.");
+									} else if(exception.getMessage().indexOf("Partida possui o maximo de jogadores") != -1) {
+										JOptionPane.showMessageDialog(btCadastrar, "A PARTIDA JÁ POSSUI O MÁXIMO DE JOGADORES (3).");
 									}
 								}
 							}
