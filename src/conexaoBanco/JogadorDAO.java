@@ -23,7 +23,7 @@ public class JogadorDAO {
     public void createJogadorTable() throws Exception {
     	Statement stmt = conn.getConexao().createStatement();
     	stmt.executeUpdate("create table if not exists Jogador ( "+
-    					   "cod_jogador INTEGER primary key," +
+    					   "cod_jogador AUTO_INCREMENT primary key," +
     					   "apelido VARCHAR(40) unique not null," +
     					   "pontos float,"+
     					   "cod_partida integer, foreign key(cod_partida) references Partida(cod_partida));");
@@ -65,8 +65,8 @@ public class JogadorDAO {
 	
 	public void insertJogador(Jogador jogador) throws Exception {
 		Statement stmt = conn.getConexao().createStatement();
-		String updateQuery = jogador.getPontos() == -1 ? "Insert into JOGADOR(cod_jogador, apelido) values("+jogador.getCodigo()+",'"+jogador.getApelido()+"');" : 
-			"Insert into JOGADOR(cod_jogador, apelido, pontos) values("+jogador.getCodigo()  +",'"+jogador.getApelido()+"',"+jogador.getPontos()+");";
+		String updateQuery = jogador.getPontos() == -1 ? "Insert into JOGADOR(apelido) values('"+jogador.getApelido()+"');" : 
+			"Insert into JOGADOR(apelido, pontos) values('"+jogador.getApelido()+"',"+jogador.getPontos()+");";
 		stmt.executeUpdate(updateQuery);
 	}
 	

@@ -9,6 +9,7 @@ public class Partida {
 	private List<Jogador> jogadores = new ArrayList<Jogador>();;
 	private Tabuleiro tabuleiro;
 	private Cronometro cronometro;
+
 	private int vez;
 	private JogadorDAO jogadorDAO;
 	
@@ -23,19 +24,21 @@ public class Partida {
 			
 		}
 	}
-	
-	public Partida(Jogador jogador, boolean emparalhamentoImpar){
+
+	public Partida(Jogador jogador, boolean emparalhamentoImpar) throws Exception{
 		try {
 			jogadorDAO = new JogadorDAO();
 			jogadorDAO.createJogadorTable();	
 		} catch(Exception e) {
 			e.printStackTrace();
+			throw e;
 		}
 		try {
 			this.addJogador(jogador);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			throw e;
 		}
 		this.cronometro = new Cronometro();
 		this.tabuleiro = new Tabuleiro();
@@ -56,7 +59,9 @@ public class Partida {
 		//Pontos alterados para 1000 devido a Categoria 1, a medida que o tempo passa a pontuacao muda
 		jogadores.get(vez).setPontos(1000);
 		
+
 		while(jogadores.get(vez).getPontos() != 0) {
+
 		
 			if(cronometro.getTempoDecorrido() < 60) {
 				// Categoria 1
@@ -112,6 +117,7 @@ public class Partida {
 				jogadores.add(jogador);
 			} catch(Exception e) {
 				e.printStackTrace();
+				throw e;
 			}
 		} else {
 			throw new Exception("Partida possui o maximo de jogadores");
@@ -137,4 +143,7 @@ public class Partida {
 	public void pausarPartida() {
 		cronometro.pausarContagem();
 	}
+
+
+	
 }

@@ -75,6 +75,7 @@ public class Jogo15 {
 			}
 		});
 		btnNewButton_1_1.setIcon(new ImageIcon("Img/05.png"));
+
 		btnNewButton_1_1.setBounds(10, 69, 66, 58);
 		frame.getContentPane().add(btnNewButton_1_1);
 		
@@ -132,6 +133,7 @@ public class Jogo15 {
 			}
 		});
 		btnNewButton_1_2_1_1.setIcon(new ImageIcon("Img/06.png"));
+
 		btnNewButton_1_2_1_1.setBounds(77, 69, 66, 58);
 		frame.getContentPane().add(btnNewButton_1_2_1_1);
 		

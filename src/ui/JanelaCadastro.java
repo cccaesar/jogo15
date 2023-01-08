@@ -16,6 +16,7 @@ import javax.swing.JButton;
 import javax.swing.AbstractAction;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -25,6 +26,7 @@ import javax.swing.ComboBoxModel;
 import javax.swing.JRadioButton;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
 
 public class JanelaCadastro {
 
@@ -43,6 +45,7 @@ public class JanelaCadastro {
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
+				
 				try {
 					JanelaCadastro window = new JanelaCadastro();
 					window.frame.setVisible(true);
@@ -117,13 +120,47 @@ public class JanelaCadastro {
 		
 		btCadastrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-					if(e.getSource()==btCadastrar && !tfApelido.getText().isEmpty()) {
-						jogadorCriado = (new Jogador(tfApelido.getText(),codigo+=1));	
-						partida = new Partida(jogadorCriado, false);
-						JOptionPane.showMessageDialog(btCadastrar, "Sucesso !!");
-						btStart.setEnabled(true);
-						rdbtnOp1.setEnabled(true);
-						rdbtnOp2.setEnabled(true);
+			
+				if(e.getSource()==btCadastrar && !tfApelido.getText().isEmpty()) {
+						jogadorCriado = (new Jogador(tfApelido.getText(),codigo+=1));
+						
+						if (partida == null || partida.getJogadores().size() == 0) {
+							try {
+								partida = new Partida(jogadorCriado, false);
+							} catch(Exception exception) {
+																
+								if(exception.getMessage().indexOf("[SQLITE_CONSTRAINT_UNIQUE] A UNIQUE constraint failed (UNIQUE constraint failed: Jogador.apelido") != -1) {
+									JOptionPane.showMessageDialog(btCadastrar, "ESSE APELIDO JÁ SE ENCONTRA CADASTRADO.");
+								}
+							}
+						} else {
+							if (partida.getJogadores().isEmpty()) {	
+								try {
+									partida.addJogador(jogadorCriado);
+								} catch (Exception e1) {
+									if(e1.getMessage().indexOf("[SQLITE_CONSTRAINT_UNIQUE] A UNIQUE constraint failed (UNIQUE constraint failed: Jogador.apelido") != -1) {
+										JOptionPane.showMessageDialog(btCadastrar, "ESSE APELIDO JÁ SE ENCONTRA CADASTRADO.");
+									}
+								}
+								JOptionPane.showMessageDialog(btCadastrar, "Sucesso !!");
+								comboBox.addItem(jogadorCriado.getApelido());
+							}
+							
+							else {
+								try {
+									partida.addJogador(jogadorCriado);
+									JOptionPane.showMessageDialog(btCadastrar, "Diferente !!");
+									comboBox.addItem(jogadorCriado.getApelido());
+								} catch(Exception exception) {
+									if(exception.getMessage().indexOf("[SQLITE_CONSTRAINT_UNIQUE] A UNIQUE constraint failed (UNIQUE constraint failed: Jogador.apelido") != -1) {
+										JOptionPane.showMessageDialog(btCadastrar, "ESSE APELIDO JÁ SE ENCONTRA CADASTRADO.");
+									}
+								}
+							}
+							btStart.setEnabled(true);
+							rdbtnOp1.setEnabled(true);
+							rdbtnOp2.setEnabled(true);
+							}	
 						}
 					else {
 						JOptionPane.showMessageDialog(btCadastrar, "Digite um Apelido !!");
