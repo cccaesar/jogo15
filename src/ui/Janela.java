@@ -92,306 +92,6 @@ public class Janela {
 		comboBoxEmbaralhamento.setModel(new DefaultComboBoxModel(new String[] {"Embaralhamento par", "Embaralhamento impar"}));
 		panel.add(comboBoxEmbaralhamento);
 		
-		JButton btnCelula4 = new JButton("4");
-		btnCelula4.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if(celulaVazia.equals(btnCelula4) == false && partida.getTabuleiro().selecionarPeca( Integer.parseInt(btnCelula4.getText()) )) {
-					String auxText = btnCelula4.getText();
-					Icon auxIcon = btnCelula4.getIcon();
-					btnCelula4.setText(celulaVazia.getText());
-					btnCelula4.setIcon(null);
-					celulaVazia.setText(auxText);
-					celulaVazia.setIcon(auxIcon);
-					celulaVazia = btnCelula4;
-				};
-			}
-		});
-		
-		JButton btnCelula1 = new JButton("1");
-		btnCelula1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if(celulaVazia.equals(btnCelula1) == false && partida.getTabuleiro().selecionarPeca( Integer.parseInt(btnCelula1.getText()) )) {
-					String auxText = btnCelula1.getText();
-					Icon auxIcon = btnCelula1.getIcon();
-					btnCelula1.setText(celulaVazia.getText());
-					btnCelula1.setIcon(null);
-					celulaVazia.setText(auxText);
-					celulaVazia.setIcon(auxIcon);
-					celulaVazia = btnCelula1;
-				};
-			}
-		});
-		btnCelula1.setBounds(53, 53, 90, 90);
-		panel_1.add(btnCelula1);
-		
-		JButton btnCelula2 = new JButton("2");
-		btnCelula2.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if(celulaVazia.equals(btnCelula2) == false && partida.getTabuleiro().selecionarPeca( Integer.parseInt(btnCelula2.getText()) )) {
-					String auxText = btnCelula2.getText();
-					Icon auxIcon = btnCelula2.getIcon();
-					btnCelula2.setText(celulaVazia.getText());
-					btnCelula2.setIcon(null);
-					celulaVazia.setText(auxText);
-					celulaVazia.setIcon(auxIcon);
-					celulaVazia = btnCelula2;
-				};
-			}
-		});
-		btnCelula2.setBounds(143, 53, 90, 90);
-		panel_1.add(btnCelula2);
-		
-		JButton btnCelula3 = new JButton("3");
-		btnCelula3.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if(celulaVazia.equals(btnCelula3) == false && partida.getTabuleiro().selecionarPeca( Integer.parseInt(btnCelula3.getText()) )) {
-					String auxText = btnCelula3.getText();
-					Icon auxIcon = btnCelula3.getIcon();
-					btnCelula3.setText(celulaVazia.getText());
-					btnCelula3.setIcon(null);
-					celulaVazia.setText(auxText);
-					celulaVazia.setIcon(auxIcon);
-					celulaVazia = btnCelula3;
-				};
-			}
-		});
-		btnCelula3.setBounds(233, 53, 90, 90);
-		panel_1.add(btnCelula3);
-		btnCelula4.setIcon(null);
-		btnCelula4.setBounds(323, 53, 90, 90);
-		panel_1.add(btnCelula4);
-		
-		JButton btnCelula5 = new JButton("5");
-		btnCelula5.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if(celulaVazia.equals(btnCelula5) == false && partida.getTabuleiro().selecionarPeca( Integer.parseInt(btnCelula5.getText()) )) {
-					String auxText = btnCelula5.getText();
-					Icon auxIcon = btnCelula5.getIcon();
-					btnCelula5.setText(celulaVazia.getText());
-					btnCelula5.setIcon(null);
-					celulaVazia.setText(auxText);
-					celulaVazia.setIcon(auxIcon);
-					celulaVazia = btnCelula5;
-				};
-			}
-		});
-		btnCelula5.setBounds(53, 144, 90, 90);
-		panel_1.add(btnCelula5);
-		
-		JButton btnCelula6 = new JButton("6");
-		btnCelula6.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if(celulaVazia.equals(btnCelula6) == false && partida.getTabuleiro().selecionarPeca( Integer.parseInt(btnCelula6.getText()) )) {
-					String auxText = btnCelula6.getText();
-					Icon auxIcon = btnCelula6.getIcon();
-					btnCelula6.setText(celulaVazia.getText());
-					btnCelula6.setIcon(null);
-					celulaVazia.setText(auxText);
-					celulaVazia.setIcon(auxIcon);
-					celulaVazia = btnCelula6;
-				};
-			}
-		});
-		btnCelula6.setBounds(143, 144, 90, 90);
-		panel_1.add(btnCelula6);
-		
-		JButton btnCelula7 = new JButton("7");
-		btnCelula7.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if(celulaVazia.equals(btnCelula7) == false && partida.getTabuleiro().selecionarPeca( Integer.parseInt(btnCelula7.getText()) )) {
-					String auxText = btnCelula7.getText();
-					Icon auxIcon = btnCelula7.getIcon();
-					btnCelula7.setText(celulaVazia.getText());
-					btnCelula7.setIcon(null);
-					celulaVazia.setText(auxText);
-					celulaVazia.setIcon(auxIcon);
-					celulaVazia = btnCelula7;
-				};
-			}
-		});
-		btnCelula7.setBounds(233, 144, 90, 90);
-		panel_1.add(btnCelula7);
-		
-		JButton btnCelula8 = new JButton("8");
-		btnCelula8.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if(celulaVazia.equals(btnCelula8) == false && partida.getTabuleiro().selecionarPeca( Integer.parseInt(btnCelula8.getText()) )) {
-					String auxText = btnCelula8.getText();
-					Icon auxIcon = btnCelula8.getIcon();
-					btnCelula8.setText(celulaVazia.getText());
-					btnCelula8.setIcon(null);
-					celulaVazia.setText(auxText);
-					celulaVazia.setIcon(auxIcon);
-					celulaVazia = btnCelula8;
-				};
-			}
-		});
-		btnCelula8.setBounds(323, 144, 90, 90);
-		panel_1.add(btnCelula8);
-		
-		JButton btnCelula9 = new JButton("9");
-		btnCelula9.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if(celulaVazia.equals(btnCelula9) == false && partida.getTabuleiro().selecionarPeca( Integer.parseInt(btnCelula9.getText()) )) {
-					String auxText = btnCelula9.getText();
-					Icon auxIcon = btnCelula9.getIcon();
-					btnCelula9.setText(celulaVazia.getText());
-					btnCelula9.setIcon(null);
-					celulaVazia.setText(auxText);
-					celulaVazia.setIcon(auxIcon);
-					celulaVazia = btnCelula9;
-				};
-			}
-		});
-		btnCelula9.setBounds(53, 235, 90, 90);
-		panel_1.add(btnCelula9);
-		
-		JButton btnCelula10 = new JButton("10");
-		btnCelula10.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if(celulaVazia.equals(btnCelula10) == false && partida.getTabuleiro().selecionarPeca( Integer.parseInt(btnCelula10.getText()) )) {
-					String auxText = btnCelula10.getText();
-					Icon auxIcon = btnCelula10.getIcon();
-					btnCelula10.setText(celulaVazia.getText());
-					btnCelula10.setIcon(null);
-					celulaVazia.setText(auxText);
-					celulaVazia.setIcon(auxIcon);
-					celulaVazia = btnCelula10;
-				};
-			}
-		});
-		btnCelula10.setBounds(143, 235, 90, 90);
-		panel_1.add(btnCelula10);
-		
-		JButton btnCelula11 = new JButton("11");
-		btnCelula11.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if(celulaVazia.equals(btnCelula11) == false && partida.getTabuleiro().selecionarPeca( Integer.parseInt(btnCelula11.getText()) )) {
-					String auxText = btnCelula11.getText();
-					Icon auxIcon = btnCelula11.getIcon();
-					btnCelula11.setText(celulaVazia.getText());
-					btnCelula11.setIcon(null);
-					celulaVazia.setText(auxText);
-					celulaVazia.setIcon(auxIcon);
-					celulaVazia = btnCelula11;
-				};
-			}
-		});
-		btnCelula11.setBounds(233, 235, 90, 90);
-		panel_1.add(btnCelula11);
-		
-		JButton btnCelula12 = new JButton("12");
-		btnCelula12.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if(celulaVazia.equals(btnCelula12) == false && partida.getTabuleiro().selecionarPeca( Integer.parseInt(btnCelula12.getText()) )) {
-					String auxText = btnCelula12.getText();
-					Icon auxIcon = btnCelula12.getIcon();
-					btnCelula12.setText(celulaVazia.getText());
-					btnCelula12.setIcon(null);
-					celulaVazia.setText(auxText);
-					celulaVazia.setIcon(auxIcon);
-					celulaVazia = btnCelula12;
-				};
-			}
-		});
-		btnCelula12.setBounds(323, 235, 90, 90);
-		panel_1.add(btnCelula12);
-		
-		JButton btnCelula13 = new JButton("13");
-		btnCelula13.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if(celulaVazia.equals(btnCelula13) == false && partida.getTabuleiro().selecionarPeca( Integer.parseInt(btnCelula13.getText()) )) {
-					String auxText = btnCelula13.getText();
-					Icon auxIcon = btnCelula13.getIcon();
-					btnCelula13.setText(celulaVazia.getText());
-					btnCelula13.setIcon(null);
-					celulaVazia.setText(auxText);
-					celulaVazia.setIcon(auxIcon);
-					celulaVazia = btnCelula13;
-				};
-			}
-		});
-		btnCelula13.setBounds(53, 326, 90, 90);
-		panel_1.add(btnCelula13);
-		
-		JButton btnCelula14 = new JButton("14");
-		btnCelula14.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if(celulaVazia.equals(btnCelula14) == false && partida.getTabuleiro().selecionarPeca( Integer.parseInt(btnCelula14.getText()) )) {
-					String auxText = btnCelula14.getText();
-					Icon auxIcon = btnCelula14.getIcon();
-					btnCelula14.setText(celulaVazia.getText());
-					btnCelula14.setIcon(null);
-					celulaVazia.setText(auxText);
-					celulaVazia.setIcon(auxIcon);
-					celulaVazia = btnCelula14;
-				};
-			}
-		});
-		btnCelula14.setBounds(143, 326, 90, 90);
-		panel_1.add(btnCelula14);
-		
-		JButton btnCelula15 = new JButton("15");
-		btnCelula15.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if(celulaVazia.equals(btnCelula15) == false && partida.getTabuleiro().selecionarPeca( Integer.parseInt(btnCelula15.getText()) )) {
-					String auxText = btnCelula15.getText();
-					Icon auxIcon = btnCelula15.getIcon();
-					btnCelula15.setText(celulaVazia.getText());
-					btnCelula15.setIcon(null);
-					celulaVazia.setText(auxText);
-					celulaVazia.setIcon(auxIcon);
-					celulaVazia = btnCelula15;
-				};
-			}
-		});
-		btnCelula15.setBounds(233, 326, 90, 90);
-		panel_1.add(btnCelula15);
-		
-		JButton btnCelula16 = new JButton("");
-		btnCelula16.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if(celulaVazia.equals(btnCelula16) == false &&  partida.getTabuleiro().selecionarPeca( Integer.parseInt(btnCelula16.getText()) )) {
-					String auxText = btnCelula16.getText();
-					Icon auxIcon = btnCelula16.getIcon();
-					btnCelula16.setText(celulaVazia.getText());
-					btnCelula16.setIcon(null);
-					celulaVazia.setText(auxText);
-					celulaVazia.setIcon(auxIcon);
-					celulaVazia = btnCelula16;
-				};
-			}
-		});
-		btnCelula16.setBounds(323, 326, 90, 90);
-		panel_1.add(btnCelula16);
-		
-		celulaVazia = btnCelula16;
-		
-		cellButtons.addAll( Arrays.asList( new JButton[]{btnCelula1, btnCelula2, btnCelula3, btnCelula4, btnCelula5, btnCelula6, btnCelula7, btnCelula8, btnCelula9, btnCelula10, btnCelula11, btnCelula12, btnCelula13, btnCelula14, btnCelula15, btnCelula16} ) );
-		
-		JLabel lblNewLabel = new JLabel("Jogo");
-		lblNewLabel.setBounds(187, 28, 116, 14);
-		panel_1.add(lblNewLabel);
-		
-		JButton btnPause = new JButton("Pausar");
-		btnPause.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if(partida.getCronometro().estaPausado()) {
-					partida.getCronometro().iniciarContagem();
-					btnPause.setText("Pausar");
-				} else {
-					partida.getCronometro().pausarContagem();
-					btnPause.setText("Continuar");
-				}
-			}
-		});
-		btnPause.setBounds(520, 72, 89, 23);
-		panel_1.add(btnPause);
-		
-		JButton btnSave = new JButton("Salvar");
-		btnSave.setBounds(520, 118, 89, 23);
-		panel_1.add(btnSave);
-		
 		JPanel panel_2 = new JPanel();
 		frame.getContentPane().add(panel_2, "name_202031338613200");
 		panel_2.setLayout(null);
@@ -403,16 +103,16 @@ public class Janela {
 		JList listRankingPartida = new JList();
 		scrollPanePartida.setViewportView(listRankingPartida);
 		
-		JLabel lblCurrentPlayer = new JLabel("Jogador atual:");
-		lblCurrentPlayer.setBounds(492, 237, 157, 14);
-		panel_1.add(lblCurrentPlayer);
-		
 		JScrollPane scrollPaneGlobal = new JScrollPane();
 		scrollPaneGlobal.setBounds(465, 55, 167, 145);
 		panel_2.add(scrollPaneGlobal);
 		
 		JList listRankingGlobal = new JList();
 		scrollPaneGlobal.setViewportView(listRankingGlobal);
+		
+		JLabel lblCurrentPlayer = new JLabel("Jogador atual:");
+		lblCurrentPlayer.setBounds(492, 237, 157, 14);
+		panel_1.add(lblCurrentPlayer);
 		
 		JButton btnDesistir = new JButton("Desistir");
 		btnDesistir.addActionListener(new ActionListener() {
@@ -456,6 +156,370 @@ public class Janela {
 		});
 		btnDesistir.setBounds(520, 166, 89, 23);
 		panel_1.add(btnDesistir);
+		
+		JButton btnCelula4 = new JButton("4");
+		btnCelula4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(celulaVazia.equals(btnCelula4) == false && partida.getTabuleiro().selecionarPeca( Integer.parseInt(btnCelula4.getText()) )) {
+					String auxText = btnCelula4.getText();
+					Icon auxIcon = btnCelula4.getIcon();
+					btnCelula4.setText(celulaVazia.getText());
+					btnCelula4.setIcon(null);
+					celulaVazia.setText(auxText);
+					celulaVazia.setIcon(auxIcon);
+					celulaVazia = btnCelula4;
+					if (partida.getTabuleiro().getResolvido()) {
+						partida.getCronometro().pausarContagem();
+						btnDesistir.doClick();		
+					}
+				};
+			}
+		});
+		
+		JButton btnCelula1 = new JButton("1");
+		btnCelula1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(celulaVazia.equals(btnCelula1) == false && partida.getTabuleiro().selecionarPeca( Integer.parseInt(btnCelula1.getText()) )) {
+					String auxText = btnCelula1.getText();
+					Icon auxIcon = btnCelula1.getIcon();
+					btnCelula1.setText(celulaVazia.getText());
+					btnCelula1.setIcon(null);
+					celulaVazia.setText(auxText);
+					celulaVazia.setIcon(auxIcon);
+					celulaVazia = btnCelula1;
+					if (partida.getTabuleiro().getResolvido()) {
+						partida.getCronometro().pausarContagem();
+						btnDesistir.doClick();		
+					}
+				};
+			}
+		});
+		btnCelula1.setBounds(53, 53, 90, 90);
+		panel_1.add(btnCelula1);
+		
+		JButton btnCelula2 = new JButton("2");
+		btnCelula2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(celulaVazia.equals(btnCelula2) == false && partida.getTabuleiro().selecionarPeca( Integer.parseInt(btnCelula2.getText()) )) {
+					String auxText = btnCelula2.getText();
+					Icon auxIcon = btnCelula2.getIcon();
+					btnCelula2.setText(celulaVazia.getText());
+					btnCelula2.setIcon(null);
+					celulaVazia.setText(auxText);
+					celulaVazia.setIcon(auxIcon);
+					celulaVazia = btnCelula2;
+					if (partida.getTabuleiro().getResolvido()) {
+						partida.getCronometro().pausarContagem();
+						btnDesistir.doClick();		
+					}
+				};
+			}
+		});
+		btnCelula2.setBounds(143, 53, 90, 90);
+		panel_1.add(btnCelula2);
+		
+		JButton btnCelula3 = new JButton("3");
+		btnCelula3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(celulaVazia.equals(btnCelula3) == false && partida.getTabuleiro().selecionarPeca( Integer.parseInt(btnCelula3.getText()) )) {
+					String auxText = btnCelula3.getText();
+					Icon auxIcon = btnCelula3.getIcon();
+					btnCelula3.setText(celulaVazia.getText());
+					btnCelula3.setIcon(null);
+					celulaVazia.setText(auxText);
+					celulaVazia.setIcon(auxIcon);
+					celulaVazia = btnCelula3;
+					if (partida.getTabuleiro().getResolvido()) {
+						partida.getCronometro().pausarContagem();
+						btnDesistir.doClick();		
+					}
+				};
+			}
+		});
+		btnCelula3.setBounds(233, 53, 90, 90);
+		panel_1.add(btnCelula3);
+		btnCelula4.setIcon(null);
+		btnCelula4.setBounds(323, 53, 90, 90);
+		panel_1.add(btnCelula4);
+		
+		JButton btnCelula5 = new JButton("5");
+		btnCelula5.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(celulaVazia.equals(btnCelula5) == false && partida.getTabuleiro().selecionarPeca( Integer.parseInt(btnCelula5.getText()) )) {
+					String auxText = btnCelula5.getText();
+					Icon auxIcon = btnCelula5.getIcon();
+					btnCelula5.setText(celulaVazia.getText());
+					btnCelula5.setIcon(null);
+					celulaVazia.setText(auxText);
+					celulaVazia.setIcon(auxIcon);
+					celulaVazia = btnCelula5;
+					if (partida.getTabuleiro().getResolvido()) {
+						partida.getCronometro().pausarContagem();
+						btnDesistir.doClick();		
+					}
+				};
+			}
+		});
+		btnCelula5.setBounds(53, 144, 90, 90);
+		panel_1.add(btnCelula5);
+		
+		JButton btnCelula6 = new JButton("6");
+		btnCelula6.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(celulaVazia.equals(btnCelula6) == false && partida.getTabuleiro().selecionarPeca( Integer.parseInt(btnCelula6.getText()) )) {
+					String auxText = btnCelula6.getText();
+					Icon auxIcon = btnCelula6.getIcon();
+					btnCelula6.setText(celulaVazia.getText());
+					btnCelula6.setIcon(null);
+					celulaVazia.setText(auxText);
+					celulaVazia.setIcon(auxIcon);
+					celulaVazia = btnCelula6;
+					if (partida.getTabuleiro().getResolvido()) {
+						partida.getCronometro().pausarContagem();
+						btnDesistir.doClick();		
+					}
+				};
+			}
+		});
+		btnCelula6.setBounds(143, 144, 90, 90);
+		panel_1.add(btnCelula6);
+		
+		JButton btnCelula7 = new JButton("7");
+		btnCelula7.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(celulaVazia.equals(btnCelula7) == false && partida.getTabuleiro().selecionarPeca( Integer.parseInt(btnCelula7.getText()) )) {
+					String auxText = btnCelula7.getText();
+					Icon auxIcon = btnCelula7.getIcon();
+					btnCelula7.setText(celulaVazia.getText());
+					btnCelula7.setIcon(null);
+					celulaVazia.setText(auxText);
+					celulaVazia.setIcon(auxIcon);
+					celulaVazia = btnCelula7;
+					if (partida.getTabuleiro().getResolvido()) {
+						partida.getCronometro().pausarContagem();
+						btnDesistir.doClick();		
+					}
+				};
+			}
+		});
+		btnCelula7.setBounds(233, 144, 90, 90);
+		panel_1.add(btnCelula7);
+		
+		JButton btnCelula8 = new JButton("8");
+		btnCelula8.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(celulaVazia.equals(btnCelula8) == false && partida.getTabuleiro().selecionarPeca( Integer.parseInt(btnCelula8.getText()) )) {
+					String auxText = btnCelula8.getText();
+					Icon auxIcon = btnCelula8.getIcon();
+					btnCelula8.setText(celulaVazia.getText());
+					btnCelula8.setIcon(null);
+					celulaVazia.setText(auxText);
+					celulaVazia.setIcon(auxIcon);
+					celulaVazia = btnCelula8;
+					if (partida.getTabuleiro().getResolvido()) {
+						partida.getCronometro().pausarContagem();
+						btnDesistir.doClick();		
+					}
+				};
+			}
+		});
+		btnCelula8.setBounds(323, 144, 90, 90);
+		panel_1.add(btnCelula8);
+		
+		JButton btnCelula9 = new JButton("9");
+		btnCelula9.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(celulaVazia.equals(btnCelula9) == false && partida.getTabuleiro().selecionarPeca( Integer.parseInt(btnCelula9.getText()) )) {
+					String auxText = btnCelula9.getText();
+					Icon auxIcon = btnCelula9.getIcon();
+					btnCelula9.setText(celulaVazia.getText());
+					btnCelula9.setIcon(null);
+					celulaVazia.setText(auxText);
+					celulaVazia.setIcon(auxIcon);
+					celulaVazia = btnCelula9;
+					if (partida.getTabuleiro().getResolvido()) {
+						partida.getCronometro().pausarContagem();
+						btnDesistir.doClick();		
+					}
+				};
+			}
+		});
+		btnCelula9.setBounds(53, 235, 90, 90);
+		panel_1.add(btnCelula9);
+		
+		JButton btnCelula10 = new JButton("10");
+		btnCelula10.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(celulaVazia.equals(btnCelula10) == false && partida.getTabuleiro().selecionarPeca( Integer.parseInt(btnCelula10.getText()) )) {
+					String auxText = btnCelula10.getText();
+					Icon auxIcon = btnCelula10.getIcon();
+					btnCelula10.setText(celulaVazia.getText());
+					btnCelula10.setIcon(null);
+					celulaVazia.setText(auxText);
+					celulaVazia.setIcon(auxIcon);
+					celulaVazia = btnCelula10;
+					if (partida.getTabuleiro().getResolvido()) {
+						partida.getCronometro().pausarContagem();
+						btnDesistir.doClick();		
+					}
+				};
+			}
+		});
+		btnCelula10.setBounds(143, 235, 90, 90);
+		panel_1.add(btnCelula10);
+		
+		JButton btnCelula11 = new JButton("11");
+		btnCelula11.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(celulaVazia.equals(btnCelula11) == false && partida.getTabuleiro().selecionarPeca( Integer.parseInt(btnCelula11.getText()) )) {
+					String auxText = btnCelula11.getText();
+					Icon auxIcon = btnCelula11.getIcon();
+					btnCelula11.setText(celulaVazia.getText());
+					btnCelula11.setIcon(null);
+					celulaVazia.setText(auxText);
+					celulaVazia.setIcon(auxIcon);
+					celulaVazia = btnCelula11;
+					if (partida.getTabuleiro().getResolvido()) {
+						partida.getCronometro().pausarContagem();
+						btnDesistir.doClick();		
+					}
+				};
+			}
+		});
+		btnCelula11.setBounds(233, 235, 90, 90);
+		panel_1.add(btnCelula11);
+		
+		JButton btnCelula12 = new JButton("12");
+		btnCelula12.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(celulaVazia.equals(btnCelula12) == false && partida.getTabuleiro().selecionarPeca( Integer.parseInt(btnCelula12.getText()) )) {
+					String auxText = btnCelula12.getText();
+					Icon auxIcon = btnCelula12.getIcon();
+					btnCelula12.setText(celulaVazia.getText());
+					btnCelula12.setIcon(null);
+					celulaVazia.setText(auxText);
+					celulaVazia.setIcon(auxIcon);
+					celulaVazia = btnCelula12;
+					if (partida.getTabuleiro().getResolvido()) {
+						partida.getCronometro().pausarContagem();
+						btnDesistir.doClick();		
+					}
+				};
+			}
+		});
+		btnCelula12.setBounds(323, 235, 90, 90);
+		panel_1.add(btnCelula12);
+		
+		JButton btnCelula13 = new JButton("13");
+		btnCelula13.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(celulaVazia.equals(btnCelula13) == false && partida.getTabuleiro().selecionarPeca( Integer.parseInt(btnCelula13.getText()) )) {
+					String auxText = btnCelula13.getText();
+					Icon auxIcon = btnCelula13.getIcon();
+					btnCelula13.setText(celulaVazia.getText());
+					btnCelula13.setIcon(null);
+					celulaVazia.setText(auxText);
+					celulaVazia.setIcon(auxIcon);
+					celulaVazia = btnCelula13;
+					if (partida.getTabuleiro().getResolvido()) {
+						partida.getCronometro().pausarContagem();
+						btnDesistir.doClick();		
+					}
+				};
+			}
+		});
+		btnCelula13.setBounds(53, 326, 90, 90);
+		panel_1.add(btnCelula13);
+		
+		JButton btnCelula14 = new JButton("14");
+		btnCelula14.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(celulaVazia.equals(btnCelula14) == false && partida.getTabuleiro().selecionarPeca( Integer.parseInt(btnCelula14.getText()) )) {
+					String auxText = btnCelula14.getText();
+					Icon auxIcon = btnCelula14.getIcon();
+					btnCelula14.setText(celulaVazia.getText());
+					btnCelula14.setIcon(null);
+					celulaVazia.setText(auxText);
+					celulaVazia.setIcon(auxIcon);
+					celulaVazia = btnCelula14;
+					if (partida.getTabuleiro().getResolvido()) {
+						partida.getCronometro().pausarContagem();
+						btnDesistir.doClick();		
+					}
+				};
+			}
+		});
+		btnCelula14.setBounds(143, 326, 90, 90);
+		panel_1.add(btnCelula14);
+		
+		JButton btnCelula15 = new JButton("15");
+		btnCelula15.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(celulaVazia.equals(btnCelula15) == false && partida.getTabuleiro().selecionarPeca( Integer.parseInt(btnCelula15.getText()) )) {
+					String auxText = btnCelula15.getText();
+					Icon auxIcon = btnCelula15.getIcon();
+					btnCelula15.setText(celulaVazia.getText());
+					btnCelula15.setIcon(null);
+					celulaVazia.setText(auxText);
+					celulaVazia.setIcon(auxIcon);
+					celulaVazia = btnCelula15;
+					if (partida.getTabuleiro().getResolvido()) {
+						partida.getCronometro().pausarContagem();
+						btnDesistir.doClick();		
+					}
+				};
+			}
+		});
+		btnCelula15.setBounds(233, 326, 90, 90);
+		panel_1.add(btnCelula15);
+		
+		JButton btnCelula16 = new JButton("");
+		btnCelula16.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(celulaVazia.equals(btnCelula16) == false &&  partida.getTabuleiro().selecionarPeca( Integer.parseInt(btnCelula16.getText()) )) {
+					String auxText = btnCelula16.getText();
+					Icon auxIcon = btnCelula16.getIcon();
+					btnCelula16.setText(celulaVazia.getText());
+					btnCelula16.setIcon(null);
+					celulaVazia.setText(auxText);
+					celulaVazia.setIcon(auxIcon);
+					celulaVazia = btnCelula16;
+					if (partida.getTabuleiro().getResolvido()) {
+						partida.getCronometro().pausarContagem();
+						btnDesistir.doClick();		
+					}
+				};
+			}
+		});
+		btnCelula16.setBounds(323, 326, 90, 90);
+		panel_1.add(btnCelula16);
+		
+		celulaVazia = btnCelula16;
+		
+		cellButtons.addAll( Arrays.asList( new JButton[]{btnCelula1, btnCelula2, btnCelula3, btnCelula4, btnCelula5, btnCelula6, btnCelula7, btnCelula8, btnCelula9, btnCelula10, btnCelula11, btnCelula12, btnCelula13, btnCelula14, btnCelula15, btnCelula16} ) );
+		
+		JLabel lblNewLabel = new JLabel("Jogo");
+		lblNewLabel.setBounds(187, 28, 116, 14);
+		panel_1.add(lblNewLabel);
+		
+		JButton btnPause = new JButton("Pausar");
+		btnPause.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(partida.getCronometro().estaPausado()) {
+					partida.getCronometro().iniciarContagem();
+					btnPause.setText("Pausar");
+				} else {
+					partida.getCronometro().pausarContagem();
+					btnPause.setText("Continuar");
+				}
+			}
+		});
+		btnPause.setBounds(520, 72, 89, 23);
+		panel_1.add(btnPause);
+		
+		JButton btnSave = new JButton("Salvar");
+		btnSave.setBounds(520, 118, 89, 23);
+		panel_1.add(btnSave);
 		
 		JLabel lblRankingPartida = new JLabel("Ranking da partida");
 		lblRankingPartida.setBounds(72, 30, 95, 14);
