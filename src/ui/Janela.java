@@ -31,6 +31,7 @@ import javax.swing.JTextField;
 import negocio.Jogador;
 import negocio.Partida;
 import negocio.Peca;
+import java.awt.Font;
 
 public class Janela {
 
