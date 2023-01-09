@@ -7,6 +7,7 @@ public class Tabuleiro {
 	private Peca pecaSelecionada1;
 	private Peca pecaSelecionada2;
 	private boolean resolvido;
+	private String imagem;
 	
 	Tabuleiro() {
 		pecaSelecionada1 = null;
@@ -85,8 +86,9 @@ public class Tabuleiro {
 	public void embaralharPar() {
 		ArrayList<Integer> ordemPecas = new ArrayList<>(Arrays.asList(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15));
 		Embaralhador.embaralhamentoPar(ordemPecas);
+		this.pecas.clear();
 		int i = 0;
-		for( ;i >= ordemPecas.size(); i++) {
+		for( ;i < ordemPecas.size(); i++) {
 			Peca peca = new Peca(i + 1, "", ordemPecas.get(i), false);
 			this.pecas.add(peca);
 		}
@@ -96,12 +98,24 @@ public class Tabuleiro {
 	public void embaralharImpar() {
 		ArrayList<Integer> ordemPecas = new ArrayList<>(Arrays.asList(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15));
 		Embaralhador.embaralhamentoImpar(ordemPecas);
+		this.pecas.clear();
 		int i = 0;
-		for( ;i >= ordemPecas.size(); i++) {
+		for( ;i < ordemPecas.size(); i++) {
 			Peca peca = new Peca(i + 1, "", ordemPecas.get(i), false);
 			this.pecas.add(peca);
 		}
 		this.pecas.add(new Peca(i + 1, "", 16, true));
+	}
+
+	public String getImagem() {
+		return imagem;
+	}
+
+	public void setImagem(String imagem) {
+		this.imagem = imagem;
+		for(int i = 0; i < pecas.size() - 1; i++) {
+			pecas.get(i).setImagem("Img/"+imagem+"/"+(i + 1)+".png");
+		}
 	}
 	
 	

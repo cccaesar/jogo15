@@ -12,7 +12,6 @@ public class Partida {
 
 	private int vez;
 	private JogadorDAO jogadorDAO;
-	
 
 	public Partida(Tabuleiro tabuleiro, int vez) {
 		this.vez = vez;
