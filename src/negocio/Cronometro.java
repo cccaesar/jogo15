@@ -49,6 +49,6 @@ public class Cronometro {
 	}
 	
 	public boolean estaPausado() {
-		return fim != null;
+		return fim == null && inicio == null;
 	}
 }

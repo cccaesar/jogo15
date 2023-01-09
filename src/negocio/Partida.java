@@ -92,6 +92,12 @@ public class Partida {
 				jogadores.get(vez).setPontos( jogadores.get(vez).getPontos() + (tempoDeSobra * 1/600));
 			}
 		}
+		
+		try {
+			jogadorDAO.updateJogadorPontos(jogadores.get(vez).getPontos(), jogadores.get(vez).getCodigo());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 
 	}
 	
