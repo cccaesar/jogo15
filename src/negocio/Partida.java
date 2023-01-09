@@ -1,3 +1,4 @@
+
 package negocio;
 
 import java.util.ArrayList;
@@ -101,7 +102,7 @@ public class Partida {
 			if(this.vez < this.jogadores.size() - 1) {
 				this.vez++;
 			} else {
-				//Mandar a interface exibir o placar da partida e depois o hist�rico
+				//Mandar a interface exibir o placar da partida e depois o historico
 			}
 			return true;
 		}
