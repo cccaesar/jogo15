@@ -13,6 +13,7 @@ public class Partida {
 
 	private int vez;
 	private JogadorDAO jogadorDAO;
+	private boolean finalizado = false;
 
 	public Partida(Tabuleiro tabuleiro, int vez) {
 		this.vez = vez;
@@ -48,7 +49,6 @@ public class Partida {
 		} else {
 			tabuleiro.embaralharPar();
 		}
-		cronometro.inciarContagem();
 	}
 	
 	public void pontuar() {
@@ -99,11 +99,7 @@ public class Partida {
 		if(getTabuleiro().getResolvido()) {
 			cronometro.pausarContagem();
 			this.pontuar();
-			if(this.vez < this.jogadores.size() - 1) {
-				this.vez++;
-			} else {
-				//Mandar a interface exibir o placar da partida e depois o historico
-			}
+			passarVez();
 			return true;
 		}
 		return false;
@@ -141,10 +137,39 @@ public class Partida {
 		return vez;
 	}
 	
+	public boolean getFinalizado() {
+		return finalizado;
+	}
+	
+	public void passarVez() {
+		jogadores.get(vez).setPontos(0);
+		if(this.vez + 1 == this.jogadores.size()) {
+			pausarPartida();
+			this.finalizado = true;
+		} else {
+			this.vez++;
+			cronometro.reiniciarContagem();
+		}
+	}
+	
 	public void pausarPartida() {
 		cronometro.pausarContagem();
 	}
 
-
+	public List<String> getRankingGlobal() throws Exception {
+		
+		List<String> rankingGlobal =  new ArrayList<String>();
+		try {
+			List<Jogador> jogadores = jogadorDAO.getJogadores();
+			rankingGlobal = jogadores
+							.stream()
+							.sorted((jogador1, jogador2) -> Double.compare(jogador1.getPontos(), jogador2.getPontos()))
+							.map(jogador -> jogador.getApelido()+" - "+jogador.getPontos()).toList();
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw e;
+		}
+		return rankingGlobal;
+	}
 	
 }
