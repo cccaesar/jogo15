@@ -1,6 +1,7 @@
 package ui;
 
 import java.awt.EventQueue;
+import java.awt.Image;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -21,10 +22,14 @@ import negocio.Peca;
 
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.awt.event.ActionEvent;
 import javax.swing.JList;
+import javax.imageio.ImageIO;
 import javax.swing.AbstractListModel;
 import javax.swing.DefaultListModel;
 import javax.swing.ImageIcon;
@@ -304,10 +309,19 @@ public class Janela {
 				.sorted((peca1, peca2) -> Integer.compare(peca1.getPosicao(), peca2.getPosicao()) )
 				.mapToInt(Peca::getId)
 				.toArray();
-		for(int i = 0; i < pecas.length; i++) {
-			if(i < 16) {
-				cellButtons.get(i).setIcon( new ImageIcon(partida.getTabuleiro().getPecas().get(i).getImagem() ) );
+		for(int i = 0; i < pecas.length - 1; i++) {
+			Image imagem;
+			try 
+			{
+				imagem = ImageIO.read(new File(partida.getTabuleiro().getPecas().get(i).getImagem())); // eventually C:\\ImageTest\\pic2.jpg
+				imagem = imagem.getScaledInstance(90, 90, imagem.SCALE_DEFAULT);
+				cellButtons.get(i).setIcon( new ImageIcon(imagem) );
+			} 
+			catch (IOException e) 
+			{
+			    e.printStackTrace();
 			}
+			
 		}		 
 	}
 }
