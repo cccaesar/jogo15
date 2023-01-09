@@ -12,7 +12,7 @@ public class Cronometro {
 		this.tempoDecorrido = 0;
 	}
 	
-	public void inciarContagem() {
+	public void iniciarContagem() {
 		this.inicio = Instant.now();
 	}
 	
@@ -26,7 +26,7 @@ public class Cronometro {
 	}
 	
 	public void reiniciarContagem() {
-		inciarContagem();
+		iniciarContagem();
 		this.fim = null;
 		tempoDecorrido = 0;
 	}
@@ -46,5 +46,9 @@ public class Cronometro {
 	
 	public boolean getContagemAcabou() {
 		return (inicio == null && fim == null);
+	}
+	
+	public boolean estaPausado() {
+		return fim != null;
 	}
 }

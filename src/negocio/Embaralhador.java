@@ -23,7 +23,7 @@ public class Embaralhador {
 			  listaEmbaralhada.addAll(lista);
 			  java.util.Collections.shuffle(listaEmbaralhada);
 			  inversoes = getNumeroDeInversoes(listaEmbaralhada);
-		  } while ( inversoes != 0 &&  inversoes % 2 != 0 && listaEmbaralhada.equals(lista) == false);
+		  } while ( inversoes != 0 &&  inversoes % 2 != 0);
 		  System.out.println(inversoes);
 		  return listaEmbaralhada;
 	  }

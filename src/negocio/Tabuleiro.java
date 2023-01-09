@@ -21,47 +21,38 @@ public class Tabuleiro {
 		pecaSelecionada1 = null;
 		pecaSelecionada2 = null;
 	}
-	
-	public boolean verificarValidadeDoMovimento() {
-		
-		if(pecaSelecionada1.isVazio() || pecaSelecionada2.isVazio()) {
-			int posicao1 = pecaSelecionada1.getPosicao();
-			int posicao2 = pecaSelecionada2.getPosicao();
-			int diferencaPosicoes = posicao1 - posicao2;
-			return diferencaPosicoes == 1 || diferencaPosicoes == -1 || diferencaPosicoes == 4 || diferencaPosicoes == -4;
+
+	public boolean selecionarPeca(int id) {
+		Peca pecaASerSelecionada = this.pecas.stream()
+			    .filter(peca -> id == peca.getId())
+			    .findAny()
+			    .orElse(null);
+		if(pecaASerSelecionada != null && pecaASerSelecionada.isVazio() == false) {
+			int posicaoPecaVazia = pecas.get(15).getPosicao();
+			boolean pecaVaziaEhVizinha = posicaoPecaVazia - pecaASerSelecionada.getPosicao() == 1 || 
+					posicaoPecaVazia - pecaASerSelecionada.getPosicao() == -1 || 
+					posicaoPecaVazia - pecaASerSelecionada.getPosicao() == 4 || 
+					posicaoPecaVazia - pecaASerSelecionada.getPosicao() == -4;
+			if(pecaVaziaEhVizinha) {
+				pecaSelecionada1 = pecaASerSelecionada;
+				pecaSelecionada2 = pecas.get(15);
+				movimentarPecas();
+				return true;
+			}
 		}
 		return false;
 	}
 	
-	public void selecionarPeca(int id) {
-		if(pecaSelecionada1 == null) {
-			this.pecaSelecionada1 = this.pecas.stream()
-		    .filter(peca -> id == peca.getId())
-		    .findAny()
-		    .orElse(null);
-		} else {
-			Peca pecaASerSelecionada = this.pecas.stream()
-		    .filter(peca -> id == peca.getId())
-		    .findAny()
-		    .orElse(null);
-			if(pecaASerSelecionada.equals(this.pecaSelecionada1)) {
-				this.pecaSelecionada1 = null;
-			} else if(this.pecaSelecionada1.isVazio() || pecaASerSelecionada.isVazio()){
-				this.pecaSelecionada2 = pecaASerSelecionada;
-			}
-		}
-	}
-	
 	public void movimentarPecas() {
-		if( this.verificarValidadeDoMovimento() ) {
-			int auxPosicao;
-			auxPosicao = pecaSelecionada1.getPosicao();
-			pecaSelecionada1.setPosicao(pecaSelecionada2.getPosicao());
-			pecaSelecionada2.setPosicao(auxPosicao);
-			if(this.checkIfPuzzleIsSolved()) {
-				this.setResolvido();
-			};
-		}
+		int auxPosicao;
+		auxPosicao = pecaSelecionada1.getPosicao();
+		pecaSelecionada1.setPosicao(pecaSelecionada2.getPosicao());
+		pecaSelecionada2.setPosicao(auxPosicao);
+		pecaSelecionada1 = null;
+		pecaSelecionada2 = null;
+		if(this.checkIfPuzzleIsSolved()) {
+			this.setResolvido();
+		};
 	}
 	
 	public boolean checkIfPuzzleIsSolved() {
@@ -85,7 +76,7 @@ public class Tabuleiro {
 	
 	public void embaralharPar() {
 		ArrayList<Integer> ordemPecas = new ArrayList<>(Arrays.asList(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15));
-		Embaralhador.embaralhamentoPar(ordemPecas);
+		ordemPecas = Embaralhador.embaralhamentoPar(ordemPecas);
 		this.pecas.clear();
 		int i = 0;
 		for( ;i < ordemPecas.size(); i++) {
@@ -97,7 +88,7 @@ public class Tabuleiro {
 	
 	public void embaralharImpar() {
 		ArrayList<Integer> ordemPecas = new ArrayList<>(Arrays.asList(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15));
-		Embaralhador.embaralhamentoImpar(ordemPecas);
+		ordemPecas = Embaralhador.embaralhamentoImpar(ordemPecas);
 		this.pecas.clear();
 		int i = 0;
 		for( ;i < ordemPecas.size(); i++) {
@@ -114,7 +105,7 @@ public class Tabuleiro {
 	public void setImagem(String imagem) {
 		this.imagem = imagem;
 		for(int i = 0; i < pecas.size() - 1; i++) {
-			pecas.get(i).setImagem("Img/"+imagem+"/"+(i + 1)+".png");
+			pecas.get(i).setImagem("Img/"+imagem+"/"+pecas.get(i).getId()+".png");
 		}
 	}
 	
